@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camile & Stone Email Finder</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --white: #ffffff;
+    --gray-50: #fafafa;
+    --gray-100: #f2f2f0;
+    --gray-200: #e4e4e0;
+    --gray-300: #cececa;
+    --gray-400: #a8a8a3;
+    --gray-500: #787873;
+    --gray-700: #3d3d3a;
+    --gray-900: #1a1a18;
+    --accent: #2e2e2b;
+    --accent-mid: #555550;
+    --border: #ddddd8;
+    --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+    --shadow: 0 2px 16px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
+    --instagram: #c13584;
+    --tiktok: #2d8fa0;
+    --ai: #7c6fa0;
+    --ai-light: rgba(124,111,160,0.08);
+    --ai-border: rgba(124,111,160,0.22);
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--gray-900);
+    font-family: 'Jost', sans-serif;
+    min-height: 100vh;
+    padding: 0 1rem 5rem;
+  }
+
+  .topbar {
+    background: var(--gray-900);
+    color: var(--gray-400);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  header {
+    text-align: center;
+    padding: 3.5rem 1rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  .brand-rule {
+    width: 40px; height: 1px;
+    background: var(--gray-300);
+    margin: 0 auto 1.5rem;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 600;
+    color: var(--gray-900);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  h1 .amp {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gray-500);
+  }
+
+  .designed-by {
+    margin-top: 0.75rem;
+    font-size: 0.72rem;
+    color: var(--gray-400);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .designed-by span { color: var(--gray-700); font-weight: 500; }
+
+  /* How to use accordion */
+  .how-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .how-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: left;
+    transition: background 0.15s;
+  }
+
+  .how-toggle:hover { background: var(--gray-50); }
+  .how-chevron { font-size: 0.6rem; color: var(--gray-400); transition: transform 0.25s; flex-shrink: 0; }
+  .how-toggle.open .how-chevron { transform: rotate(180deg); }
+
+  .how-body {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid var(--gray-100);
+  }
+  .how-body.open { display: block; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .step {
+    background: var(--gray-50);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gray-200);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .step-title { font-size: 0.78rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.3rem; }
+  .step-desc { font-size: 0.73rem; color: var(--gray-500); line-height: 1.5; }
+  .step-desc a { color: var(--gray-700); }
+
+  .how-note {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--gray-100);
+    border-radius: 8px;
+    font-size: 0.73rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+  .how-note b { color: var(--gray-700); }
+
+  /* Main container */
+  .main { max-width: 740px; margin: 0 auto; }
+
+  /* Cards */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s;
+  }
+  .card:hover { box-shadow: var(--shadow); }
+
+  /* ========== AI DISCOVERY CARD ========== */
+  .ai-card {
+    background: var(--white);
+    border: 1px solid var(--ai-border);
+    border-radius: var(--radius);
+    padding: 0;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .ai-card:hover { box-shadow: var(--shadow); }
+
+  .ai-card-header {
+    background: linear-gradient(135deg, #f8f6fc 0%, #f0edf8 100%);
+    border-bottom: 1px solid var(--ai-border);
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .ai-card-header:hover { background: linear-gradient(135deg, #f3f0fa 0%, #ebe7f6 100%); }
+
+  .ai-card-title-row { display: flex; align-items: center; gap: 0.75rem; }
+
+  .ai-badge {
+    background: var(--ai);
+    color: white;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .ai-card-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .ai-card-subtitle {
+    font-size: 0.68rem;
+    color: var(--gray-400);
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 400;
+    margin-top: 0.1rem;
+  }
+
+  .ai-chevron { font-size: 0.6rem; color: var(--ai); transition: transform 0.25s; }
+  .ai-card-header.open .ai-chevron { transform: rotate(180deg); }
+
+  .ai-card-body {
+    display: none;
+    padding: 1.5rem;
+  }
+  .ai-card-body.open { display: block; }
+
+  .field-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .api-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+  .input-wrap { flex: 1; min-width: 180px; position: relative; }
+
+  input[type="text"], input[type="password"], input[type="number"], textarea {
+    width: 100%;
+    background: var(--gray-50);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.7rem 2.5rem 0.7rem 1rem;
+    color: var(--gray-900);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  }
+
+  input[type="number"] { padding-right: 1rem; }
+
+  input:focus, textarea:focus {
+    border-color: var(--gray-400);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.04);
+  }
+
+  .toggle-vis {
+    position: absolute; right: 0.75rem; top: 50%;
+    transform: translateY(-50%);
+    background: none; border: none;
+    color: var(--gray-400); cursor: pointer;
+    font-size: 0.85rem; padding: 0; line-height: 1;
+  }
+
+  .api-hint { font-size: 0.73rem; color: var(--gray-400); }
+  .api-hint a { color: var(--gray-700); text-decoration: underline; text-decoration-color: var(--gray-300); }
+
+  .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+
+  .platform-tags { display: flex; gap: 0.4rem; }
+
+  .ptag {
+    font-size: 0.62rem; font-weight: 600;
+    padding: 0.18rem 0.55rem; border-radius: 4px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .ptag.ig { background: rgba(193,53,132,0.08); color: var(--instagram); border: 1px solid rgba(193,53,132,0.2); }
+  .ptag.tt { background: rgba(45,143,160,0.08); color: var(--tiktok); border: 1px solid rgba(45,143,160,0.2); }
+
+  /* AI Discovery form fields */
+  .filter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 500px) { .filter-grid { grid-template-columns: 1fr; } }
+
+  .filter-block { display: flex; flex-direction: column; }
+
+  .follower-row { display: flex; gap: 0.5rem; align-items: center; }
+  .follower-row input { flex: 1; }
+  .follower-sep { font-size: 0.7rem; color: var(--gray-400); flex-shrink: 0; }
+
+  /* Platform toggles */
+  .platform-toggle-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+
+  .plat-toggle-btn {
+    flex: 1;
+    background: var(--gray-50);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.55rem 0.75rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--gray-500);
+    text-align: center;
+  }
+
+  .plat-toggle-btn.active-ig { background: rgba(193,53,132,0.07); border-color: rgba(193,53,132,0.3); color: var(--instagram); }
+  .plat-toggle-btn.active-tt { background: rgba(45,143,160,0.07); border-color: rgba(45,143,160,0.3); color: var(--tiktok); }
+  .plat-toggle-btn.active-both { background: var(--ai-light); border-color: var(--ai-border); color: var(--ai); }
+
+  /* Gender selector */
+  .gender-row { display: flex; gap: 0.5rem; }
+
+  .gender-btn {
+    flex: 1;
+    background: var(--gray-50);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.5rem 0.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--gray-500);
+    text-align: center;
+  }
+  .gender-btn.active { background: var(--gray-900); border-color: var(--gray-900); color: var(--white); }
+
+  /* Keyword chips */
+  .keyword-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.6rem; }
+
+  .kw-chip {
+    display: flex; align-items: center; gap: 0.3rem;
+    background: var(--ai-light);
+    border: 1px solid var(--ai-border);
+    color: var(--ai);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.22rem 0.65rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .kw-chip.active { background: var(--ai); color: white; border-color: var(--ai); }
+  .kw-chip .chip-x { font-size: 0.6rem; opacity: 0.6; }
+
+  .kw-add-row { display: flex; gap: 0.5rem; }
+  .kw-add-row input { flex: 1; padding-right: 1rem; }
+  .kw-add-btn {
+    background: var(--gray-100);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.5rem 0.9rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .kw-add-btn:hover { background: var(--gray-200); }
+
+  /* Country multi-select */
+  .country-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .country-chip {
+    background: var(--gray-100);
+    border: 1px solid var(--border);
+    color: var(--gray-600);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.22rem 0.65rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+    color: var(--gray-500);
+  }
+  .country-chip.active { background: var(--gray-900); border-color: var(--gray-900); color: white; }
+
+  /* Divider */
+  .ai-divider {
+    border: none;
+    border-top: 1px solid var(--ai-border);
+    margin: 1.25rem 0;
+  }
+
+  /* AI Run button */
+  .ai-run-btn {
+    width: 100%;
+    background: var(--ai);
+    color: var(--white);
+    border: none; border-radius: var(--radius);
+    padding: 0.95rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500; font-size: 0.85rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 12px rgba(124,111,160,0.25);
+  }
+  .ai-run-btn:hover:not(:disabled) {
+    background: #6a5d8e;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(124,111,160,0.35);
+  }
+  .ai-run-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+  /* AI status log */
+  .ai-log {
+    display: none;
+    margin-top: 1rem;
+    background: #f8f6fc;
+    border: 1px solid var(--ai-border);
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    line-height: 1.9;
+  }
+  .ai-log.open { display: block; }
+  .ai-log-line { display: flex; align-items: flex-start; gap: 0.5rem; }
+  .ai-log-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem; }
+  .dot-done { background: #7c6fa0; }
+  .dot-active { background: #b9a9e0; animation: pulse 1s infinite; }
+  .dot-wait { background: var(--gray-300); }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+
+  /* AI Discovery results */
+  .ai-results {
+    display: none;
+    margin-top: 1rem;
+  }
+  .ai-results.open { display: block; }
+
+  .ai-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .ai-results-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-700);
+  }
+
+  .ai-results-count {
+    font-size: 0.7rem;
+    color: var(--ai);
+    font-weight: 500;
+  }
+
+  .creator-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.85rem;
+    animation: fadeUp 0.25s ease;
+    transition: box-shadow 0.15s, border-color 0.15s;
+  }
+  .creator-card:hover { box-shadow: var(--shadow-sm); border-color: var(--gray-300); }
+  .creator-card.selected { border-color: var(--ai); background: var(--ai-light); }
+
+  .creator-handle { font-weight: 500; font-size: 0.85rem; color: var(--gray-900); }
+  .creator-meta { font-size: 0.7rem; color: var(--gray-400); margin-top: 0.2rem; }
+  .creator-bio { font-size: 0.7rem; color: var(--gray-500); margin-top: 0.3rem; line-height: 1.4; font-style: italic; }
+
+  .creator-select-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.3rem 0.65rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .creator-select-btn:hover { border-color: var(--ai); color: var(--ai); }
+  .creator-card.selected .creator-select-btn { background: var(--ai); border-color: var(--ai); color: white; }
+
+  .ai-send-btn {
+    width: 100%;
+    margin-top: 0.75rem;
+    background: var(--gray-900);
+    color: var(--white);
+    border: none; border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500; font-size: 0.8rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .ai-send-btn:hover { background: var(--gray-700); }
+  .ai-send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* Original fields */
+  textarea {
+    resize: vertical; min-height: 120px;
+    line-height: 1.75; padding: 0.85rem 1rem;
+  }
+  textarea::placeholder { color: var(--gray-300); }
+
+  .url-count { font-size: 0.7rem; color: var(--gray-400); margin-top: 0.5rem; text-align: right; }
+  .url-count b { color: var(--gray-700); }
+
+  .run-btn {
+    width: 100%;
+    background: var(--gray-900);
+    color: var(--white);
+    border: none; border-radius: var(--radius);
+    padding: 0.95rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500; font-size: 0.85rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .run-btn:hover:not(:disabled) {
+    background: var(--gray-700);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  }
+  .run-btn:active:not(:disabled) { transform: translateY(0); }
+  .run-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .spinner {
+    width: 14px; height: 14px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white; border-radius: 50%;
+    animation: spin 0.7s linear infinite; display: none;
+  }
+  .run-btn.loading .spinner { display: block; }
+  .ai-run-btn .spinner { border-color: rgba(255,255,255,0.3); border-top-color: white; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error-msg {
+    background: #fdf2f2; border: 1px solid #e8c5c5;
+    border-radius: 10px; padding: 0.75rem 1rem;
+    font-size: 0.78rem; color: #8b3030;
+    margin-top: 0.75rem; display: none;
+  }
+
+  .progress-wrap {
+    height: 2px; background: var(--gray-200);
+    border-radius: 2px; margin-top: 1.25rem;
+    overflow: hidden; display: none;
+  }
+  .progress-fill {
+    height: 100%; background: var(--gray-900);
+    border-radius: 2px; transition: width 0.4s ease; width: 0%;
+  }
+
+  /* Results */
+  .results-section { margin-top: 2rem; }
+
+  .results-header {
+    display: flex; justify-content: space-between;
+    align-items: baseline; margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .results-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; color: var(--gray-900);
+  }
+
+  .export-btn {
+    background: none; border: 1px solid var(--border);
+    border-radius: 8px; color: var(--gray-500);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.35rem 0.85rem; cursor: pointer; transition: all 0.2s;
+  }
+  .export-btn:hover { border-color: var(--gray-400); color: var(--gray-700); background: var(--gray-50); }
+
+  .stats-row { display: flex; gap: 1px; margin-bottom: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+
+  .stat-chip {
+    flex: 1; background: var(--white);
+    padding: 1rem; text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat-chip:last-child { border-right: none; }
+
+  .stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 700;
+    color: var(--gray-900); display: block; line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.62rem; color: var(--gray-400);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    font-weight: 500; margin-top: 0.25rem; display: block;
+  }
+
+  .result-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.6rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center; gap: 1rem;
+    box-shadow: var(--shadow-sm);
+    animation: fadeUp 0.28s ease;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .result-card:hover { box-shadow: var(--shadow); border-color: var(--gray-300); }
+  .result-card.found { border-left: 3px solid var(--gray-900); }
+  .result-card.not-found { border-left: 3px solid var(--gray-200); }
+  .result-card.error { border-left: 3px solid #e8c5c5; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .plat-tag {
+    font-size: 0.6rem; font-weight: 700;
+    padding: 0.22rem 0.5rem; border-radius: 4px;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    flex-shrink: 0;
+  }
+  .plat-tag.ig { background: rgba(193,53,132,0.07); color: var(--instagram); border: 1px solid rgba(193,53,132,0.18); }
+  .plat-tag.tt { background: rgba(45,143,160,0.07); color: var(--tiktok); border: 1px solid rgba(45,143,160,0.18); }
+
+  .result-handle { font-weight: 500; font-size: 0.88rem; color: var(--gray-900); }
+  .result-emails { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.35rem; }
+
+  .email-pill {
+    font-size: 0.71rem;
+    background: var(--gray-100);
+    color: var(--gray-700);
+    border: 1px solid var(--gray-200);
+    padding: 0.18rem 0.6rem;
+    border-radius: 20px; cursor: pointer;
+    transition: all 0.15s; font-weight: 400;
+  }
+  .email-pill:hover { background: var(--gray-900); color: var(--white); border-color: var(--gray-900); }
+
+  .result-none { font-size: 0.73rem; color: var(--gray-400); margin-top: 0.3rem; }
+
+  .result-status { font-size: 0.68rem; font-weight: 500; white-space: nowrap; letter-spacing: 0.04em; }
+  .status-found { color: var(--gray-900); }
+  .status-none { color: var(--gray-400); }
+  .status-error { color: #8b3030; }
+
+  /* Section label between discovery and scanner */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0 1.25rem;
+  }
+  .section-divider-line { flex: 1; height: 1px; background: var(--border); }
+  .section-divider-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    white-space: nowrap;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.65rem;
+    color: var(--gray-400);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .toast {
+    position: fixed; bottom: 2rem; left: 50%;
+    transform: translateX(-50%) translateY(14px);
+    background: var(--gray-900); color: var(--white);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 0.55rem 1.3rem; border-radius: 20px;
+    opacity: 0; transition: all 0.25s;
+    pointer-events: none; z-index: 999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .kw-where-hint {
+    font-size: 0.62rem;
+    font-weight: 400;
+    color: var(--gray-400);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .kw-scope-note {
+    font-size: 0.68rem;
+    color: var(--gray-400);
+    margin-top: 0.6rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* Relevance score badge on creator cards */
+  .relevance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--ai-light);
+    border: 1px solid var(--ai-border);
+    color: var(--ai);
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    margin-top: 0.3rem;
+    letter-spacing: 0.03em;
+  }
+
+  .post-matches {
+    font-size: 0.68rem;
+    color: var(--gray-400);
+    margin-top: 0.25rem;
+    line-height: 1.4;
+  }
+
+  .match-tag {
+    display: inline-block;
+    background: var(--gray-100);
+    border: 1px solid var(--border);
+    color: var(--gray-600);
+    font-size: 0.62rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    margin: 0.1rem 0.1rem 0 0;
+  }
+
+  .match-tag.highlight {
+    background: var(--ai-light);
+    border-color: var(--ai-border);
+    color: var(--ai);
+  }
+
+  /* API keys section grid */
+  .api-keys-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 540px) { .api-keys-grid { grid-template-columns: 1fr; } }
+
+  .api-key-block { display: flex; flex-direction: column; gap: 0.4rem; }
+</style>
+</head>
+<body>
+
+<div class="topbar">Camile &amp; Stone — Professional Email Finder</div>
+
+<div class="main">
+
+  <header>
+    <div class="brand-rule"></div>
+    <h1>Camile <span class="amp">&</span> Stone<br>Email Finder</h1>
+    <p class="designed-by">Designed by <span>Jeannine</span></p>
+  </header>
+
+  <!-- How to Use -->
+  <div class="how-section">
+    <button class="how-toggle" onclick="toggleHow(this)">
+      How to Use This Tool
+      <span class="how-chevron">▼</span>
+    </button>
+    <div class="how-body">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-title">Get Your API Keys</div>
+          <div class="step-desc">You need two keys: an <b>Apify token</b> from <a href="https://apify.com" target="_blank">apify.com</a> and a <b>Claude API key</b> from <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>. Both have free tiers.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-title">Discover Creators (AI)</div>
+          <div class="step-desc">Use the <b>AI Creator Discovery</b> panel to set your filters — platform, gender, follower range, country, and bio keywords. The AI will find matching profiles.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-title">Send to Scanner</div>
+          <div class="step-desc">Select discovered profiles and click <b>Send to Email Scanner</b> — they auto-populate below. Or paste your own URLs directly.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-title">Scan &amp; Export</div>
+          <div class="step-desc">Click <b>Scan Profiles</b>. Each bio is checked for an email address. Click any email to copy it, or export all results as a CSV file.</div>
+        </div>
+      </div>
+      <div class="how-note">
+        <b>AI Discovery uses Claude (Anthropic)</b> to generate targeted hashtags and search terms, then Apify scrapes matching profiles and filters them against your criteria.<br>
+        <b>Note:</b> Only emails publicly visible in a profile's bio will be detected. Country filtering uses bio text clues (e.g. "Sydney", "🇦🇺") as platforms don't always expose location data.
+      </div>
+    </div>
+  </div>
+
+  <!-- API Keys -->
+  <div class="card">
+    <label class="field-label">API Keys</label>
+    <div class="api-keys-grid">
+      <div class="api-key-block">
+        <span style="font-size:0.68rem;color:var(--gray-500);font-weight:500;">Apify Token</span>
+        <div style="position:relative;">
+          <input type="password" id="apiKey" placeholder="apify_api_xxxxxxxxxxxx" autocomplete="off">
+          <button class="toggle-vis" onclick="toggleVis('apiKey', this)" title="Show / hide">👁</button>
+        </div>
+        <span class="api-hint"><a href="https://apify.com" target="_blank">apify.com</a> → Settings → API &amp; Integrations</span>
+      </div>
+      <div class="api-key-block">
+        <span style="font-size:0.68rem;color:var(--gray-500);font-weight:500;">Claude API Key <span style="color:var(--ai);font-size:0.62rem;">(for AI Discovery)</span></span>
+        <div style="position:relative;">
+          <input type="password" id="claudeKey" placeholder="sk-ant-xxxxxxxxxxxx" autocomplete="off">
+          <button class="toggle-vis" onclick="toggleVis('claudeKey', this)" title="Show / hide">👁</button>
+        </div>
+        <span class="api-hint"><a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> → API Keys</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== AI CREATOR DISCOVERY ===== -->
+  <div class="ai-card">
+    <div class="ai-card-header" onclick="toggleAiPanel(this)" id="aiPanelHeader">
+      <div>
+        <div class="ai-card-title-row">
+          <span class="ai-badge">AI</span>
+          <span class="ai-card-title">Creator Discovery</span>
+        </div>
+        <div class="ai-card-subtitle">Find Instagram &amp; TikTok creators matching your filters</div>
+      </div>
+      <span class="ai-chevron">▼</span>
+    </div>
+
+    <div class="ai-card-body" id="aiPanelBody">
+
+      <!-- Platform -->
+      <label class="field-label">Platform</label>
+      <div class="platform-toggle-row" id="platformToggleRow">
+        <button class="plat-toggle-btn active-ig" data-plat="instagram" onclick="setPlatform('instagram', this)">Instagram</button>
+        <button class="plat-toggle-btn" data-plat="tiktok" onclick="setPlatform('tiktok', this)">TikTok</button>
+        <button class="plat-toggle-btn" data-plat="both" onclick="setPlatform('both', this)">Both</button>
+      </div>
+
+      <div class="filter-grid">
+
+        <!-- Gender -->
+        <div class="filter-block">
+          <label class="field-label">Creator Gender</label>
+          <div class="gender-row" id="genderRow">
+            <button class="gender-btn active" data-g="female" onclick="setGender('female', this)">Female</button>
+            <button class="gender-btn" data-g="male" onclick="setGender('male', this)">Male</button>
+            <button class="gender-btn" data-g="any" onclick="setGender('any', this)">Any</button>
+          </div>
+        </div>
+
+        <!-- Country -->
+        <div class="filter-block">
+          <label class="field-label">Country (select all that apply)</label>
+          <div class="country-chips" id="countryChips">
+            <span class="country-chip active" data-c="Australia" onclick="toggleCountry(this)">🇦🇺 AU</span>
+            <span class="country-chip active" data-c="New Zealand" onclick="toggleCountry(this)">🇳🇿 NZ</span>
+            <span class="country-chip" data-c="United Kingdom" onclick="toggleCountry(this)">🇬🇧 UK</span>
+            <span class="country-chip" data-c="United States" onclick="toggleCountry(this)">🇺🇸 US</span>
+            <span class="country-chip" data-c="Canada" onclick="toggleCountry(this)">🇨🇦 CA</span>
+          </div>
+        </div>
+
+        <!-- Followers Min -->
+        <div class="filter-block">
+          <label class="field-label">Follower Range</label>
+          <div class="follower-row">
+            <input type="number" id="followerMin" placeholder="Min (e.g. 5000)" min="0">
+            <span class="follower-sep">—</span>
+            <input type="number" id="followerMax" placeholder="Max (e.g. 100000)" min="0">
+          </div>
+        </div>
+
+        <!-- Niche / Category hint -->
+        <div class="filter-block">
+          <label class="field-label">Creator Niche (optional)</label>
+          <input type="text" id="nicheInput" placeholder="e.g. lifestyle, parenting, beauty">
+        </div>
+
+      </div>
+
+      <!-- Keywords -->
+      <label class="field-label">Keywords <span class="kw-where-hint">— matched across bio, post captions &amp; hashtags</span></label>
+      <div class="keyword-chips" id="keywordChips">
+        <span class="kw-chip active" data-kw="mum" onclick="toggleKw(this)">mum ✕</span>
+        <span class="kw-chip active" data-kw="wife" onclick="toggleKw(this)">wife ✕</span>
+        <span class="kw-chip active" data-kw="mother" onclick="toggleKw(this)">mother ✕</span>
+        <span class="kw-chip" data-kw="mama" onclick="toggleKw(this)">mama</span>
+        <span class="kw-chip" data-kw="mom" onclick="toggleKw(this)">mom</span>
+        <span class="kw-chip" data-kw="blogger" onclick="toggleKw(this)">blogger</span>
+        <span class="kw-chip" data-kw="creator" onclick="toggleKw(this)">creator</span>
+      </div>
+      <div class="kw-add-row" style="margin-top:0.5rem;">
+        <input type="text" id="kwCustomInput" placeholder="Add custom keyword..." style="padding-right:1rem;">
+        <button class="kw-add-btn" onclick="addCustomKw()">+ Add</button>
+      </div>
+      <div class="kw-scope-note">
+        Searches bio, recent post captions, and hashtags — a creator passes if the keyword appears in <em>any</em> of them
+      </div>
+
+      <hr class="ai-divider">
+
+      <button class="ai-run-btn" id="aiRunBtn" onclick="runAiDiscovery()">
+        <div class="spinner" id="aiSpinner"></div>
+        <span id="aiRunBtnText">✦ Find Creators with AI</span>
+      </button>
+
+      <!-- Status log -->
+      <div class="ai-log" id="aiLog"></div>
+
+      <!-- Discovery results -->
+      <div class="ai-results" id="aiResults">
+        <div class="ai-results-header">
+          <span class="ai-results-title">Discovered Profiles</span>
+          <span class="ai-results-count" id="aiResultsCount"></span>
+        </div>
+        <div id="aiCreatorList"></div>
+        <button class="ai-send-btn" id="aiSendBtn" onclick="sendToScanner()" disabled>
+          Send Selected to Email Scanner →
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== END AI DISCOVERY ===== -->
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">or paste URLs directly</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <!-- URL Input -->
+  <div class="card">
+    <div class="section-header">
+      <label class="field-label" style="margin:0">Profile URLs</label>
+      <div class="platform-tags">
+        <span class="ptag ig">Instagram</span>
+        <span class="ptag tt">TikTok</span>
+      </div>
+    </div>
+    <textarea id="urlInput" placeholder="https://www.instagram.com/username/&#10;https://www.tiktok.com/@username&#10;https://www.instagram.com/another.account/"></textarea>
+    <div class="url-count">URLs detected: <b id="urlCountDisplay">0</b></div>
+  </div>
+
+  <button class="run-btn" id="runBtn" onclick="runScan()">
+    <div class="spinner"></div>
+    <span class="btn-text">Scan Profiles</span>
+  </button>
+
+  <div class="error-msg" id="errorMsg"></div>
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Results -->
+  <div class="results-section" id="resultsSection" style="display:none">
+    <div class="results-header">
+      <span class="results-title">Results</span>
+      <button class="export-btn" onclick="exportCSV()">↓ Export CSV</button>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-chip"><span class="stat-val" id="statTotal">0</span><span class="stat-label">Scanned</span></div>
+      <div class="stat-chip"><span class="stat-val" id="statFound">0</span><span class="stat-label">Emails Found</span></div>
+      <div class="stat-chip"><span class="stat-val" id="statNone">0</span><span class="stat-label">No Email</span></div>
+      <div class="stat-chip"><span class="stat-val" id="statErrors">0</span><span class="stat-label">Errors</span></div>
+    </div>
+
+    <div id="resultsList"></div>
+  </div>
+
+  <footer>Camile &amp; Stone Email Finder &nbsp;·&nbsp; Designed by Jeannine</footer>
+
+</div>
+
+<div class="toast" id="toast">Copied</div>
+
+<script>
+  // ===================== EXISTING TOOL LOGIC =====================
+
+  let results = [];
+
+  document.getElementById('urlInput').addEventListener('input', () => {
+    document.getElementById('urlCountDisplay').textContent = parseURLs().length;
+  });
+
+  function toggleHow(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+
+  function toggleVis(id, btn) {
+    const i = document.getElementById(id);
+    i.type = i.type === 'password' ? 'text' : 'password';
+  }
+
+  function toggleApiVis() { toggleVis('apiKey'); }
+
+  function parseURLs() {
+    return document.getElementById('urlInput').value
+      .split('\n').map(l => l.trim())
+      .filter(l => /instagram\.com|tiktok\.com/i.test(l));
+  }
+
+  function detectPlatform(url) {
+    if (/instagram\.com/i.test(url)) return 'instagram';
+    if (/tiktok\.com/i.test(url)) return 'tiktok';
+    return null;
+  }
+
+  function extractHandle(url) {
+    try { return new URL(url).pathname.replace(/^\/|\/$/g, '').split('/')[0].replace('@', ''); }
+    catch { return url; }
+  }
+
+  function extractEmails(text) {
+    if (!text) return [];
+    let n = text
+      .replace(/\s*\[\s*at\s*\]\s*|\s+at\s+/gi, '@')
+      .replace(/\s*\[\s*dot\s*\]\s*|\s+dot\s+/gi, '.');
+    return [...new Set(n.match(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g) || [])];
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('errorMsg');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(() => el.style.display = 'none', 6000);
+  }
+
+  async function apifyCall(actorId, input, token) {
+    const res = await fetch(`https://api.apify.com/v2/acts/${actorId}/run-sync-get-dataset-items?token=${token}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(input)
+    });
+    if (!res.ok) throw new Error('Apify returned ' + res.status);
+    const data = await res.json();
+    if (!data?.[0]) throw new Error('No profile data returned');
+    return data;
+  }
+
+  async function fetchBio(handle, platform, token) {
+    if (platform === 'instagram') {
+      const data = await apifyCall('apify~instagram-profile-scraper', { usernames: [handle], resultsLimit: 1 }, token);
+      return data[0].biography || data[0].bio || '';
+    } else {
+      const data = await apifyCall('clockworks~free-tiktok-scraper', {
+        profiles: [`https://www.tiktok.com/@${handle}`],
+        resultsPerPage: 1,
+        shouldDownloadVideos: false,
+        shouldDownloadCovers: false
+      }, token);
+      const p = data[0].authorMeta || data[0];
+      return p.signature || p.bio || p.description || '';
+    }
+  }
+
+  function renderResult(r) {
+    const card = document.createElement('div');
+    const cls = r.platform === 'instagram' ? 'ig' : 'tt';
+    const lbl = r.platform === 'instagram' ? 'IG' : 'TT';
+    let status, body, cardClass;
+
+    if (r.error) {
+      cardClass = 'error';
+      status = `<span class="result-status status-error">Error</span>`;
+      body = `<div class="result-none">${r.error}</div>`;
+    } else if (r.emails.length > 0) {
+      cardClass = 'found';
+      status = `<span class="result-status status-found">${r.emails.length} found</span>`;
+      body = `<div class="result-emails">${r.emails.map(e =>
+        `<span class="email-pill" onclick="copyText('${e}')">${e}</span>`
+      ).join('')}</div>`;
+    } else {
+      cardClass = 'not-found';
+      status = `<span class="result-status status-none">No email</span>`;
+      body = `<div class="result-none">No email address found in bio</div>`;
+    }
+
+    card.className = `result-card ${cardClass}`;
+    card.innerHTML = `
+      <span class="plat-tag ${cls}">${lbl}</span>
+      <div>
+        <div class="result-handle">@${r.handle}</div>
+        ${body}
+      </div>
+      ${status}
+    `;
+    document.getElementById('resultsList').appendChild(card);
+  }
+
+  function updateStats() {
+    document.getElementById('statTotal').textContent = results.length;
+    document.getElementById('statFound').textContent = results.filter(r => !r.error && r.emails.length > 0).length;
+    document.getElementById('statNone').textContent = results.filter(r => !r.error && r.emails.length === 0).length;
+    document.getElementById('statErrors').textContent = results.filter(r => r.error).length;
+  }
+
+  async function runScan() {
+    const token = document.getElementById('apiKey').value.trim();
+    if (!token) { showError('Please enter your Apify API token to continue.'); return; }
+    const urls = parseURLs();
+    if (!urls.length) { showError('No valid Instagram or TikTok URLs detected. Please check your input.'); return; }
+
+    results = [];
+    document.getElementById('resultsList').innerHTML = '';
+    document.getElementById('resultsSection').style.display = 'block';
+    document.getElementById('progressWrap').style.display = 'block';
+    document.getElementById('progressFill').style.width = '0%';
+
+    const btn = document.getElementById('runBtn');
+    btn.classList.add('loading'); btn.disabled = true;
+    btn.querySelector('.btn-text').textContent = 'Scanning profiles...';
+
+    for (let i = 0; i < urls.length; i++) {
+      const url = urls[i];
+      const platform = detectPlatform(url);
+      const handle = extractHandle(url);
+      let bio = '', error = null;
+
+      try { bio = await fetchBio(handle, platform, token); }
+      catch (e) { error = e.message; }
+
+      const emails = error ? [] : extractEmails(bio);
+      const r = { url, platform, handle, emails, error };
+      results.push(r); renderResult(r); updateStats();
+      document.getElementById('progressFill').style.width = Math.round(((i + 1) / urls.length) * 100) + '%';
+    }
+
+    btn.classList.remove('loading'); btn.disabled = false;
+    btn.querySelector('.btn-text').textContent = 'Scan Profiles';
+    document.getElementById('progressWrap').style.display = 'none';
+  }
+
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => showToast('Copied!'));
+  }
+
+  function copyEmail(email) { copyText(email); }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 1800);
+  }
+
+  function exportCSV() {
+    if (!results.length) return;
+    // Only export rows that have at least one email
+    const withEmails = results.filter(r => !r.error && r.emails.length > 0);
+    if (!withEmails.length) { showToast('No emails to export'); return; }
+    const rows = [
+      ['Profile URL', 'Email Address'],
+      ...withEmails.flatMap(r =>
+        r.emails.map(email => [`"${r.url}"`, `"${email}"`])
+      )
+    ];
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([rows.map(r => r.join(',')).join('\n')], { type: 'text/csv' }));
+    a.download = 'camile-stone-emails.csv';
+    a.click();
+  }
+
+  // ===================== AI DISCOVERY LOGIC =====================
+
+  let selectedPlatform = 'instagram';
+  let selectedGender = 'female';
+  let discoveredCreators = [];
+  let selectedCreatorUrls = new Set();
+
+  // Panel toggle
+  function toggleAiPanel(header) {
+    header.classList.toggle('open');
+    document.getElementById('aiPanelBody').classList.toggle('open');
+  }
+
+  // Open panel by default
+  document.getElementById('aiPanelHeader').classList.add('open');
+  document.getElementById('aiPanelBody').classList.add('open');
+
+  function setPlatform(plat, btn) {
+    selectedPlatform = plat;
+    document.querySelectorAll('.plat-toggle-btn').forEach(b => {
+      b.classList.remove('active-ig', 'active-tt', 'active-both');
+    });
+    if (plat === 'instagram') btn.classList.add('active-ig');
+    else if (plat === 'tiktok') btn.classList.add('active-tt');
+    else btn.classList.add('active-both');
+  }
+
+  function setGender(g, btn) {
+    selectedGender = g;
+    document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function toggleCountry(chip) { chip.classList.toggle('active'); }
+
+  function toggleKw(chip) {
+    chip.classList.toggle('active');
+    const isActive = chip.classList.contains('active');
+    chip.textContent = chip.dataset.kw + (isActive ? ' ✕' : '');
+  }
+
+  function addCustomKw() {
+    const input = document.getElementById('kwCustomInput');
+    const val = input.value.trim().toLowerCase();
+    if (!val) return;
+    const chip = document.createElement('span');
+    chip.className = 'kw-chip active';
+    chip.dataset.kw = val;
+    chip.textContent = val + ' ✕';
+    chip.onclick = function() { toggleKw(this); };
+    document.getElementById('keywordChips').appendChild(chip);
+    input.value = '';
+  }
+
+  document.getElementById('kwCustomInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') addCustomKw();
+  });
+
+  function getActiveKeywords() {
+    return [...document.querySelectorAll('.kw-chip.active')].map(c => c.dataset.kw);
+  }
+
+  function getActiveCountries() {
+    return [...document.querySelectorAll('.country-chip.active')].map(c => c.dataset.c);
+  }
+
+  function addLog(msg, status = 'done') {
+    const log = document.getElementById('aiLog');
+    log.classList.add('open');
+    const line = document.createElement('div');
+    line.className = 'ai-log-line';
+    line.innerHTML = `<span class="ai-log-dot dot-${status}"></span><span>${msg}</span>`;
+    log.appendChild(line);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  function clearLog() {
+    const log = document.getElementById('aiLog');
+    log.innerHTML = '';
+    log.classList.remove('open');
+  }
+
+  async function callClaude(claudeKey, prompt) {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': claudeKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-5-20250929',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error?.message || 'Claude API error: ' + res.status);
+    }
+    const data = await res.json();
+    return data.content.map(b => b.text || '').join('');
+  }
+
+  // Filter by follower count and country only (keywords handled per-mode separately)
+  // Filter by follower count only
+  function baseFilter(profiles, filters) {
+    return profiles.filter(p => {
+      const followers = p.followersCount || p.followers || p.fans || 0;
+      if (filters.minFollowers && followers < filters.minFollowers) return false;
+      if (filters.maxFollowers && followers > filters.maxFollowers) return false;
+      return true;
+    });
+  }
+
+  // Check keywords across bio, post captions, and hashtags
+  // Returns quickly on bio match; only hits Apify for posts if bio doesn't match
+  async function checkKeywords(profile, keywords, platform, apifyToken) {
+    if (!keywords.length) return { passed: true, bioMatch: false, postScore: 0, postMatches: [] };
+
+    const bio = (profile.biography || profile.bio || profile.signature || profile.description || '').toLowerCase();
+    const bioMatch = keywords.some(kw => bio.includes(kw.toLowerCase()));
+    if (bioMatch) return { passed: true, bioMatch: true, postScore: 0, postMatches: [] };
+
+    // Bio didn't match — scan recent post captions + hashtags
+    try {
+      const handle = profile.username || profile.uniqueId || '';
+      let postTexts = [];
+
+      if (platform === 'instagram') {
+        const posts = await apifyCall('apify~instagram-post-scraper', {
+          username: handle, resultsLimit: 12
+        }, apifyToken);
+        postTexts = posts.map(p => (p.caption || p.text || p.description || '').toLowerCase());
+      } else {
+        const data = await apifyCall('clockworks~free-tiktok-scraper', {
+          profiles: [`https://www.tiktok.com/@${handle}`],
+          resultsPerPage: 12, shouldDownloadVideos: false, shouldDownloadCovers: false
+        }, apifyToken);
+        postTexts = data.map(d => (d.text || d.desc || d.description || '').toLowerCase());
+      }
+
+      let postScore = 0;
+      const postMatches = [];
+      keywords.forEach(kw => {
+        const hits = postTexts.filter(t => t.includes(kw.toLowerCase())).length;
+        if (hits > 0) { postScore += hits; postMatches.push({ kw, hits }); }
+      });
+
+      return { passed: postScore > 0, bioMatch: false, postScore, postMatches };
+    } catch {
+      return { passed: false, bioMatch: false, postScore: 0, postMatches: [] };
+    }
+  }
+
+  function renderCreatorCard(profile, platform, matchInfo) {
+    const handle = profile.username || profile.uniqueId || profile.handle || 'unknown';
+    const followers = (profile.followersCount || profile.followers || profile.fans || 0).toLocaleString();
+    const bio = profile.biography || profile.bio || profile.signature || profile.description || '';
+    const url = platform === 'instagram'
+      ? `https://www.instagram.com/${handle}/`
+      : `https://www.tiktok.com/@${handle}`;
+    const platCls = platform === 'instagram' ? 'ig' : 'tt';
+    const platLbl = platform === 'instagram' ? 'IG' : 'TT';
+
+    let matchHtml = '';
+    if (matchInfo?.bioMatch) {
+      matchHtml = `<div class="relevance-badge">✦ Bio match</div>`;
+    } else if (matchInfo?.postScore > 0) {
+      const tags = matchInfo.postMatches.map(m =>
+        `<span class="match-tag highlight">${m.kw} ×${m.hits}</span>`).join('');
+      matchHtml = `
+        <div class="relevance-badge">✦ ${matchInfo.postScore} post match${matchInfo.postScore !== 1 ? 'es' : ''}</div>
+        <div class="post-matches">${tags}</div>`;
+    }
+
+    const card = document.createElement('div');
+    card.className = 'creator-card';
+    card.dataset.url = url;
+    card.innerHTML = `
+      <span class="plat-tag ${platCls}">${platLbl}</span>
+      <div>
+        <div class="creator-handle">@${handle}</div>
+        <div class="creator-meta">${followers} followers</div>
+        ${bio ? `<div class="creator-bio">${bio.slice(0, 110)}${bio.length > 110 ? '…' : ''}</div>` : ''}
+        ${matchHtml}
+      </div>
+      <button class="creator-select-btn" onclick="toggleCreatorSelect(this, '${url}')">Select</button>
+    `;
+    document.getElementById('aiCreatorList').appendChild(card);
+  }
+
+  function toggleCreatorSelect(btn, url) {
+    const card = btn.closest('.creator-card');
+    const isSelected = card.classList.contains('selected');
+    if (isSelected) {
+      card.classList.remove('selected');
+      btn.textContent = 'Select';
+      selectedCreatorUrls.delete(url);
+    } else {
+      card.classList.add('selected');
+      btn.textContent = '✓ Selected';
+      selectedCreatorUrls.add(url);
+    }
+    document.getElementById('aiSendBtn').disabled = selectedCreatorUrls.size === 0;
+  }
+
+  function sendToScanner() {
+    if (selectedCreatorUrls.size === 0) return;
+    const existing = document.getElementById('urlInput').value.trim();
+    const newUrls = [...selectedCreatorUrls].join('\n');
+    document.getElementById('urlInput').value = existing ? existing + '\n' + newUrls : newUrls;
+    document.getElementById('urlCountDisplay').textContent = parseURLs().length;
+    showToast(`${selectedCreatorUrls.size} profile${selectedCreatorUrls.size > 1 ? 's' : ''} added to scanner`);
+    setTimeout(() => {
+      document.getElementById('urlInput').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 300);
+  }
+
+  async function runAiDiscovery() {
+    const claudeKey = document.getElementById('claudeKey').value.trim();
+    const apifyToken = document.getElementById('apiKey').value.trim();
+    if (!claudeKey) { showError('Please enter your Claude API key to use AI Discovery.'); return; }
+    if (!apifyToken) { showError('Please enter your Apify token to use AI Discovery.'); return; }
+
+    const keywords = getActiveKeywords();
+    const countries = getActiveCountries();
+    const minFollowers = parseInt(document.getElementById('followerMin').value) || 0;
+    const maxFollowers = parseInt(document.getElementById('followerMax').value) || 9999999;
+    const niche = document.getElementById('nicheInput').value.trim();
+    const gender = selectedGender;
+    const platform = selectedPlatform;
+
+    clearLog();
+    document.getElementById('aiResults').classList.remove('open');
+    document.getElementById('aiCreatorList').innerHTML = '';
+    selectedCreatorUrls.clear();
+    discoveredCreators = [];
+
+    const btn = document.getElementById('aiRunBtn');
+    btn.disabled = true;
+    document.getElementById('aiSpinner').style.display = 'block';
+    document.getElementById('aiRunBtnText').textContent = 'Thinking...';
+
+    try {
+      // Step 1: Claude generates search strategy
+      addLog('Asking Claude to generate targeted search strategy…', 'active');
+      const platformStr = platform === 'both' ? 'Instagram and TikTok' : platform;
+      const prompt = `You are a social media influencer discovery agent.
+
+Find ${gender === 'any' ? '' : gender + ' '}creators on ${platformStr} matching:
+- Follower count: ${minFollowers.toLocaleString()} to ${maxFollowers.toLocaleString()}
+- Based in: ${countries.length > 0 ? countries.join(', ') : 'any country'}
+- Keywords to look for: ${keywords.length ? keywords.join(', ') : 'lifestyle, parenting, family'}
+${niche ? `- Niche: ${niche}` : ''}
+
+Generate 10 hashtags these creators are likely to post under.
+Respond ONLY with valid JSON, no markdown:
+{"hashtags":["tag1","tag2",...],"bioKeywords":["phrase1",...],"inspirationAccounts":["@acc1",...]}`;
+
+      const claudeResponse = await callClaude(claudeKey, prompt);
+      let strategy;
+      try {
+        strategy = JSON.parse(claudeResponse.replace(/```json|```/g, '').trim());
+      } catch {
+        throw new Error('Claude returned unexpected format. Please try again.');
+      }
+
+      addLog(`Claude suggested ${strategy.hashtags.length} hashtags`, 'done');
+      addLog(`Searching: ${strategy.hashtags.slice(0, 4).map(h => '#' + h.replace('#', '')).join(', ')}…`, 'done');
+
+      // Step 2: Scrape profiles via hashtag search
+      const platforms = platform === 'both' ? ['instagram', 'tiktok'] : [platform];
+      let allProfiles = [];
+
+      for (const plat of platforms) {
+        addLog(`Searching ${plat === 'instagram' ? 'Instagram' : 'TikTok'}…`, 'active');
+        for (const hashtag of strategy.hashtags.slice(0, 3)) {
+          try {
+            let profiles = [];
+            if (plat === 'instagram') {
+              const data = await apifyCall('apify~instagram-hashtag-scraper', {
+                hashtags: [hashtag.replace('#', '')], resultsLimit: 20
+              }, apifyToken);
+              const usernames = [...new Set(data.map(p => p.ownerUsername || p.username).filter(Boolean))];
+              for (const username of usernames.slice(0, 6)) {
+                try {
+                  const pd = await apifyCall('apify~instagram-profile-scraper', { usernames: [username], resultsLimit: 1 }, apifyToken);
+                  if (pd[0]) profiles.push({ ...pd[0], _platform: 'instagram' });
+                } catch {}
+              }
+            } else {
+              const data = await apifyCall('clockworks~free-tiktok-scraper', {
+                hashtags: [hashtag.replace('#', '')], resultsPerPage: 15,
+                shouldDownloadVideos: false, shouldDownloadCovers: false
+              }, apifyToken);
+              profiles = data.map(d => ({
+                username: d.authorMeta?.name || d.uniqueId,
+                biography: d.authorMeta?.signature || '',
+                followersCount: d.authorMeta?.fans || 0,
+                _platform: 'tiktok'
+              }));
+            }
+            allProfiles.push(...profiles);
+            addLog(`#${hashtag.replace('#', '')} — ${profiles.length} profiles`, 'done');
+          } catch (e) {
+            addLog(`Could not search #${hashtag}: ${e.message}`, 'wait');
+          }
+        }
+      }
+
+      // Step 3: Deduplicate
+      const seen = new Set();
+      allProfiles = allProfiles.filter(p => {
+        const key = (p.username || p.uniqueId || '').toLowerCase();
+        if (seen.has(key) || !key) return false;
+        seen.add(key); return true;
+      });
+      addLog(`${allProfiles.length} unique profiles — applying follower filter…`, 'done');
+
+      // Step 4: Follower filter
+      const candidates = baseFilter(allProfiles, { minFollowers, maxFollowers });
+      addLog(`${candidates.length} within follower range — checking keywords across bio, captions & hashtags…`, 'active');
+
+      // Step 5: Keyword check — bio first (fast), then posts+captions if needed
+      const matched = [];
+      for (const profile of candidates) {
+        const plat = profile._platform || (platform === 'both' ? 'instagram' : platform);
+        const handle = profile.username || profile.uniqueId || '?';
+        if (keywords.length === 0) {
+          matched.push({ profile, plat, matchInfo: null });
+          continue;
+        }
+        // Quick bio check first (no API call)
+        const bio = (profile.biography || profile.bio || profile.signature || profile.description || '').toLowerCase();
+        const bioMatch = keywords.some(kw => bio.includes(kw.toLowerCase()));
+        if (bioMatch) {
+          addLog(`@${handle} — keyword found in bio`, 'done');
+          matched.push({ profile, plat, matchInfo: { bioMatch: true, postScore: 0, postMatches: [] } });
+        } else {
+          // Fall through to post scan
+          addLog(`@${handle} — scanning posts…`, 'active');
+          const result = await checkKeywords(profile, keywords, plat, apifyToken);
+          if (result.passed) {
+            addLog(`@${handle} — keyword found in posts (${result.postScore} hit${result.postScore !== 1 ? 's' : ''})`, 'done');
+            matched.push({ profile, plat, matchInfo: result });
+          } else {
+            addLog(`@${handle} — no keyword match`, 'wait');
+          }
+        }
+      }
+
+      // Sort: bio matches first, then by post score
+      matched.sort((a, b) => {
+        if (a.matchInfo?.bioMatch && !b.matchInfo?.bioMatch) return -1;
+        if (!a.matchInfo?.bioMatch && b.matchInfo?.bioMatch) return 1;
+        return (b.matchInfo?.postScore || 0) - (a.matchInfo?.postScore || 0);
+      });
+
+      document.getElementById('aiResults').classList.add('open');
+      document.getElementById('aiResultsCount').textContent = `${matched.length} creator${matched.length !== 1 ? 's' : ''} found`;
+
+      if (matched.length === 0) {
+        document.getElementById('aiCreatorList').innerHTML = `
+          <div style="text-align:center;padding:1.5rem;color:var(--gray-400);font-size:0.8rem;">
+            No profiles matched. Try broadening your follower range or removing some keywords.
+          </div>`;
+      } else {
+        matched.forEach(({ profile, plat, matchInfo }) => renderCreatorCard(profile, plat, matchInfo));
+      }
+
+      addLog(`Done! ${matched.length} creator${matched.length !== 1 ? 's' : ''} ready to select.`, 'done');
+
+    } catch (e) {
+      addLog(`Error: ${e.message}`, 'wait');
+      showError(e.message);
+    } finally {
+      btn.disabled = false;
+      document.getElementById('aiSpinner').style.display = 'none';
+      document.getElementById('aiRunBtnText').textContent = '✦ Find Creators with AI';
+    }
+  }
+</script>
+</body>
+</html>
