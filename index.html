@@ -17,12 +17,9 @@
     --gray-500: #787873;
     --gray-700: #3d3d3a;
     --gray-900: #1a1a18;
-    --accent: #2e2e2b;
-    --accent-mid: #555550;
     --border: #ddddd8;
     --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
     --shadow: 0 2px 16px rgba(0,0,0,0.07);
-    --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
     --instagram: #c13584;
     --tiktok: #2d8fa0;
     --ai: #7c6fa0;
@@ -56,14 +53,9 @@
     padding: 3.5rem 1rem 2.5rem;
     border-bottom: 1px solid var(--border);
     margin-bottom: 2.5rem;
-    position: relative;
   }
 
-  .brand-rule {
-    width: 40px; height: 1px;
-    background: var(--gray-300);
-    margin: 0 auto 1.5rem;
-  }
+  .brand-rule { width: 40px; height: 1px; background: var(--gray-300); margin: 0 auto 1.5rem; }
 
   h1 {
     font-family: 'Cormorant Garamond', serif;
@@ -73,12 +65,7 @@
     line-height: 1.1;
     letter-spacing: -0.01em;
   }
-
-  h1 .amp {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--gray-500);
-  }
+  h1 .amp { font-style: italic; font-weight: 400; color: var(--gray-500); }
 
   .designed-by {
     margin-top: 0.75rem;
@@ -86,90 +73,9 @@
     color: var(--gray-400);
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    font-weight: 400;
   }
-
   .designed-by span { color: var(--gray-700); font-weight: 500; }
 
-  /* How to use accordion */
-  .how-section {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    margin-bottom: 1.25rem;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .how-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    padding: 1.1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--gray-700);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-align: left;
-    transition: background 0.15s;
-  }
-
-  .how-toggle:hover { background: var(--gray-50); }
-  .how-chevron { font-size: 0.6rem; color: var(--gray-400); transition: transform 0.25s; flex-shrink: 0; }
-  .how-toggle.open .how-chevron { transform: rotate(180deg); }
-
-  .how-body {
-    display: none;
-    padding: 0 1.5rem 1.5rem;
-    border-top: 1px solid var(--gray-100);
-  }
-  .how-body.open { display: block; }
-
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    margin-top: 1.25rem;
-  }
-
-  .step {
-    background: var(--gray-50);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.1rem;
-  }
-
-  .step-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--gray-200);
-    line-height: 1;
-    margin-bottom: 0.4rem;
-  }
-
-  .step-title { font-size: 0.78rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.3rem; }
-  .step-desc { font-size: 0.73rem; color: var(--gray-500); line-height: 1.5; }
-  .step-desc a { color: var(--gray-700); }
-
-  .how-note {
-    margin-top: 1rem;
-    padding: 0.75rem 1rem;
-    background: var(--gray-100);
-    border-radius: 8px;
-    font-size: 0.73rem;
-    color: var(--gray-500);
-    line-height: 1.6;
-  }
-  .how-note b { color: var(--gray-700); }
-
-  /* Main container */
   .main { max-width: 740px; margin: 0 auto; }
 
   /* Cards */
@@ -184,82 +90,44 @@
   }
   .card:hover { box-shadow: var(--shadow); }
 
-  /* ========== AI DISCOVERY CARD ========== */
-  .ai-card {
+  /* How to use */
+  .how-section {
     background: var(--white);
-    border: 1px solid var(--ai-border);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 0;
     margin-bottom: 1.25rem;
-    box-shadow: var(--shadow-sm);
     overflow: hidden;
-    transition: box-shadow 0.2s;
+    box-shadow: var(--shadow-sm);
   }
-  .ai-card:hover { box-shadow: var(--shadow); }
-
-  .ai-card-header {
-    background: linear-gradient(135deg, #f8f6fc 0%, #f0edf8 100%);
-    border-bottom: 1px solid var(--ai-border);
+  .how-toggle {
+    width: 100%; background: none; border: none;
     padding: 1.1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; font-family: 'Jost', sans-serif;
+    font-size: 0.75rem; font-weight: 600; color: var(--gray-700);
+    letter-spacing: 0.12em; text-transform: uppercase; text-align: left;
     transition: background 0.15s;
   }
-  .ai-card-header:hover { background: linear-gradient(135deg, #f3f0fa 0%, #ebe7f6 100%); }
+  .how-toggle:hover { background: var(--gray-50); }
+  .how-chevron { font-size: 0.6rem; color: var(--gray-400); transition: transform 0.25s; }
+  .how-toggle.open .how-chevron { transform: rotate(180deg); }
+  .how-body { display: none; padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--gray-100); }
+  .how-body.open { display: block; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+  .step { background: var(--gray-50); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--gray-200); line-height: 1; margin-bottom: 0.4rem; }
+  .step-title { font-size: 0.78rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.3rem; }
+  .step-desc { font-size: 0.73rem; color: var(--gray-500); line-height: 1.5; }
+  .step-desc a { color: var(--gray-700); }
+  .how-note { margin-top: 1rem; padding: 0.75rem 1rem; background: var(--gray-100); border-radius: 8px; font-size: 0.73rem; color: var(--gray-500); line-height: 1.6; }
+  .how-note b { color: var(--gray-700); }
 
-  .ai-card-title-row { display: flex; align-items: center; gap: 0.75rem; }
-
-  .ai-badge {
-    background: var(--ai);
-    color: white;
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.22rem 0.6rem;
-    border-radius: 4px;
-  }
-
-  .ai-card-title {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--gray-700);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .ai-card-subtitle {
-    font-size: 0.68rem;
-    color: var(--gray-400);
-    letter-spacing: 0;
-    text-transform: none;
-    font-weight: 400;
-    margin-top: 0.1rem;
-  }
-
-  .ai-chevron { font-size: 0.6rem; color: var(--ai); transition: transform 0.25s; }
-  .ai-card-header.open .ai-chevron { transform: rotate(180deg); }
-
-  .ai-card-body {
-    display: none;
-    padding: 1.5rem;
-  }
-  .ai-card-body.open { display: block; }
-
+  /* Fields */
   .field-label {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gray-500);
-    display: block;
-    margin-bottom: 0.6rem;
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gray-500);
+    display: block; margin-bottom: 0.6rem;
   }
-
-  .api-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
-  .input-wrap { flex: 1; min-width: 180px; position: relative; }
 
   input[type="text"], input[type="password"], input[type="number"], textarea {
     width: 100%;
@@ -273,565 +141,388 @@
     outline: none;
     transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
   }
-
   input[type="number"] { padding-right: 1rem; }
-
   input:focus, textarea:focus {
-    border-color: var(--gray-400);
-    background: var(--white);
+    border-color: var(--gray-400); background: var(--white);
     box-shadow: 0 0 0 3px rgba(0,0,0,0.04);
   }
+  /* [FIX 10] textarea flash animation when creator added */
+  @keyframes urlFlash {
+    0%   { border-color: var(--ai); box-shadow: 0 0 0 3px rgba(124,111,160,0.18); }
+    100% { border-color: var(--border); box-shadow: none; }
+  }
+  textarea.flash { animation: urlFlash 0.7s ease forwards; }
 
   .toggle-vis {
     position: absolute; right: 0.75rem; top: 50%;
     transform: translateY(-50%);
-    background: none; border: none;
-    color: var(--gray-400); cursor: pointer;
-    font-size: 0.85rem; padding: 0; line-height: 1;
+    background: none; border: none; color: var(--gray-400);
+    cursor: pointer; font-size: 0.85rem; padding: 0; line-height: 1;
   }
 
   .api-hint { font-size: 0.73rem; color: var(--gray-400); }
   .api-hint a { color: var(--gray-700); text-decoration: underline; text-decoration-color: var(--gray-300); }
 
-  .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
-
-  .platform-tags { display: flex; gap: 0.4rem; }
-
-  .ptag {
-    font-size: 0.62rem; font-weight: 600;
-    padding: 0.18rem 0.55rem; border-radius: 4px;
-    letter-spacing: 0.06em; text-transform: uppercase;
+  /* [FIX 2] Remember keys checkbox */
+  .remember-row {
+    display: flex; align-items: center; gap: 0.5rem;
+    margin-top: 0.75rem; padding-top: 0.75rem;
+    border-top: 1px solid var(--gray-100);
   }
-  .ptag.ig { background: rgba(193,53,132,0.08); color: var(--instagram); border: 1px solid rgba(193,53,132,0.2); }
-  .ptag.tt { background: rgba(45,143,160,0.08); color: var(--tiktok); border: 1px solid rgba(45,143,160,0.2); }
-
-  /* AI Discovery form fields */
-  .filter-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  .remember-row input[type="checkbox"] {
+    width: auto; padding: 0; border: none; background: none;
+    box-shadow: none; cursor: pointer;
+    width: 14px; height: 14px;
   }
+  .remember-label { font-size: 0.7rem; color: var(--gray-500); cursor: pointer; }
+  .keys-saved-badge {
+    display: none;
+    font-size: 0.62rem; color: #5a8a5a; font-weight: 600;
+    background: #eef6ee; border: 1px solid #c0dcc0;
+    padding: 0.1rem 0.5rem; border-radius: 4px; margin-left: auto;
+  }
+  .keys-saved-badge.show { display: inline-block; }
 
+  /* API keys grid */
+  .api-keys-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 540px) { .api-keys-grid { grid-template-columns: 1fr; } }
+  .api-key-block { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  /* AI Card */
+  .ai-card {
+    background: var(--white); border: 1px solid var(--ai-border);
+    border-radius: var(--radius); padding: 0;
+    margin-bottom: 1.25rem; box-shadow: var(--shadow-sm);
+    overflow: hidden; transition: box-shadow 0.2s;
+  }
+  .ai-card:hover { box-shadow: var(--shadow); }
+  .ai-card-header {
+    background: linear-gradient(135deg, #f8f6fc 0%, #f0edf8 100%);
+    border-bottom: 1px solid var(--ai-border);
+    padding: 1.1rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; transition: background 0.15s;
+  }
+  .ai-card-header:hover { background: linear-gradient(135deg, #f3f0fa 0%, #ebe7f6 100%); }
+  .ai-card-title-row { display: flex; align-items: center; gap: 0.75rem; }
+  .ai-badge { background: var(--ai); color: white; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.22rem 0.6rem; border-radius: 4px; }
+  .ai-card-title { font-size: 0.75rem; font-weight: 600; color: var(--gray-700); letter-spacing: 0.12em; text-transform: uppercase; }
+  .ai-card-subtitle { font-size: 0.68rem; color: var(--gray-400); letter-spacing: 0; text-transform: none; font-weight: 400; margin-top: 0.1rem; }
+  .ai-chevron { font-size: 0.6rem; color: var(--ai); transition: transform 0.25s; }
+  .ai-card-header.open .ai-chevron { transform: rotate(180deg); }
+  .ai-card-body { display: none; padding: 1.5rem; }
+  .ai-card-body.open { display: block; }
+
+  /* Platform / Gender */
+  .platform-toggle-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+  .plat-toggle-btn {
+    flex: 1; background: var(--gray-50); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.55rem 0.75rem; font-family: 'Jost', sans-serif;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.15s; color: var(--gray-500); text-align: center;
+  }
+  .plat-toggle-btn.active-ig { background: rgba(193,53,132,0.07); border-color: rgba(193,53,132,0.3); color: var(--instagram); }
+  .plat-toggle-btn.active-tt { background: rgba(45,143,160,0.07); border-color: rgba(45,143,160,0.3); color: var(--tiktok); }
+  .plat-toggle-btn.active-both { background: var(--ai-light); border-color: var(--ai-border); color: var(--ai); }
+
+  .filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
   @media (max-width: 500px) { .filter-grid { grid-template-columns: 1fr; } }
-
   .filter-block { display: flex; flex-direction: column; }
+
+  .gender-row { display: flex; gap: 0.5rem; }
+  .gender-btn {
+    flex: 1; background: var(--gray-50); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.5rem; font-family: 'Jost', sans-serif; font-size: 0.72rem;
+    font-weight: 500; cursor: pointer; transition: all 0.15s; color: var(--gray-500); text-align: center;
+  }
+  .gender-btn.active { background: var(--gray-900); border-color: var(--gray-900); color: var(--white); }
 
   .follower-row { display: flex; gap: 0.5rem; align-items: center; }
   .follower-row input { flex: 1; }
   .follower-sep { font-size: 0.7rem; color: var(--gray-400); flex-shrink: 0; }
 
-  /* Platform toggles */
-  .platform-toggle-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
-
-  .plat-toggle-btn {
-    flex: 1;
-    background: var(--gray-50);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.55rem 0.75rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.15s;
-    color: var(--gray-500);
-    text-align: center;
+  /* Country */
+  .country-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .country-chip {
+    background: var(--gray-100); border: 1px solid var(--border);
+    color: var(--gray-500); font-size: 0.72rem; font-weight: 500;
+    padding: 0.22rem 0.65rem; border-radius: 20px; cursor: pointer;
+    transition: all 0.15s; user-select: none;
   }
+  .country-chip.active { background: var(--gray-900); border-color: var(--gray-900); color: white; }
+  .location-disclaimer { font-size: 0.63rem; color: var(--gray-400); margin-top: 0.45rem; line-height: 1.5; font-style: italic; }
 
-  .plat-toggle-btn.active-ig { background: rgba(193,53,132,0.07); border-color: rgba(193,53,132,0.3); color: var(--instagram); }
-  .plat-toggle-btn.active-tt { background: rgba(45,143,160,0.07); border-color: rgba(45,143,160,0.3); color: var(--tiktok); }
-  .plat-toggle-btn.active-both { background: var(--ai-light); border-color: var(--ai-border); color: var(--ai); }
-
-  /* Gender selector */
-  .gender-row { display: flex; gap: 0.5rem; }
-
-  .gender-btn {
-    flex: 1;
-    background: var(--gray-50);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.5rem 0.5rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.15s;
-    color: var(--gray-500);
-    text-align: center;
-  }
-  .gender-btn.active { background: var(--gray-900); border-color: var(--gray-900); color: var(--white); }
-
-  /* Keyword chips */
+  /* Keywords */
   .keyword-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.6rem; }
-
   .kw-chip {
-    display: flex; align-items: center; gap: 0.3rem;
-    background: var(--ai-light);
-    border: 1px solid var(--ai-border);
-    color: var(--ai);
-    font-size: 0.72rem;
-    font-weight: 500;
-    padding: 0.22rem 0.65rem;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.15s;
-    user-select: none;
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    background: var(--ai-light); border: 1px solid var(--ai-border);
+    color: var(--ai); font-size: 0.72rem; font-weight: 500;
+    padding: 0.22rem 0.55rem 0.22rem 0.65rem;
+    border-radius: 20px; cursor: pointer;
+    transition: all 0.15s; user-select: none;
   }
   .kw-chip.active { background: var(--ai); color: white; border-color: var(--ai); }
-  .kw-chip .chip-x { font-size: 0.6rem; opacity: 0.6; }
+  /* [FIX 9] remove button always visible on chips */
+  .kw-chip .kw-remove {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: rgba(0,0,0,0.12); color: inherit;
+    font-size: 0.55rem; font-weight: 700; line-height: 1;
+    flex-shrink: 0; transition: background 0.1s;
+  }
+  .kw-chip .kw-remove:hover { background: rgba(0,0,0,0.25); }
+  .kw-chip.active .kw-remove { background: rgba(255,255,255,0.25); }
 
   .kw-add-row { display: flex; gap: 0.5rem; }
   .kw-add-row input { flex: 1; padding-right: 1rem; }
   .kw-add-btn {
-    background: var(--gray-100);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.5rem 0.9rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: var(--gray-700);
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
+    background: var(--gray-100); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.5rem 0.9rem; font-family: 'Jost', sans-serif;
+    font-size: 0.72rem; font-weight: 500; color: var(--gray-700);
+    cursor: pointer; transition: all 0.15s; white-space: nowrap;
   }
   .kw-add-btn:hover { background: var(--gray-200); }
 
-  /* Country multi-select */
-  .country-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .kw-where-hint { font-size: 0.62rem; font-weight: 400; color: var(--gray-400); letter-spacing: 0; text-transform: none; }
+  .kw-scope-note { font-size: 0.68rem; color: var(--gray-400); margin-top: 0.6rem; line-height: 1.5; font-style: italic; }
 
-  .country-chip {
-    background: var(--gray-100);
-    border: 1px solid var(--border);
-    color: var(--gray-600);
-    font-size: 0.72rem;
-    font-weight: 500;
-    padding: 0.22rem 0.65rem;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.15s;
-    user-select: none;
-    color: var(--gray-500);
-  }
-  .country-chip.active { background: var(--gray-900); border-color: var(--gray-900); color: white; }
-
-  /* Divider */
-  .ai-divider {
-    border: none;
-    border-top: 1px solid var(--ai-border);
-    margin: 1.25rem 0;
-  }
+  .ai-divider { border: none; border-top: 1px solid var(--ai-border); margin: 1.25rem 0; }
 
   /* AI Run button */
   .ai-run-btn {
-    width: 100%;
-    background: var(--ai);
-    color: var(--white);
+    width: 100%; background: var(--ai); color: var(--white);
     border: none; border-radius: var(--radius);
-    padding: 0.95rem 2rem;
-    font-family: 'Jost', sans-serif;
+    padding: 0.95rem 2rem; font-family: 'Jost', sans-serif;
     font-weight: 500; font-size: 0.85rem;
     letter-spacing: 0.1em; text-transform: uppercase;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 0.6rem;
-    transition: all 0.2s;
-    box-shadow: 0 2px 12px rgba(124,111,160,0.25);
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+    transition: all 0.2s; box-shadow: 0 2px 12px rgba(124,111,160,0.25);
   }
-  .ai-run-btn:hover:not(:disabled) {
-    background: #6a5d8e;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(124,111,160,0.35);
-  }
+  .ai-run-btn:hover:not(:disabled) { background: #6a5d8e; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(124,111,160,0.35); }
   .ai-run-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
 
-  /* AI status log */
-  /* AI progress bar */
-  .ai-progress-wrap {
-    display: none;
-    margin-top: 1rem;
-  }
+  /* AI Progress bar */
+  .ai-progress-wrap { display: none; margin-top: 1rem; }
+  .ai-progress-label { font-size: 0.7rem; color: var(--gray-400); margin-bottom: 0.4rem; font-style: italic; min-height: 1rem; }
+  .ai-progress-bar { height: 3px; background: var(--gray-200); border-radius: 3px; overflow: hidden; }
+  .ai-progress-fill { height: 100%; background: var(--ai); border-radius: 3px; width: 0%; transition: width 0.5s ease; }
 
-  .ai-progress-label {
-    font-size: 0.7rem;
-    color: var(--gray-400);
-    margin-bottom: 0.4rem;
-    font-style: italic;
-    min-height: 1rem;
-    transition: opacity 0.2s;
-  }
-
-  .ai-progress-bar {
-    height: 3px;
-    background: var(--gray-200);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .ai-progress-fill {
-    height: 100%;
-    background: var(--ai);
-    border-radius: 3px;
-    width: 0%;
-    transition: width 0.5s ease;
-  }
-
-  /* AI Discovery results */
-  .ai-results {
-    display: none;
-    margin-top: 1rem;
-  }
+  /* AI Results */
+  .ai-results { display: none; margin-top: 1rem; }
   .ai-results.open { display: block; }
-
-  .ai-results-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-  }
-
-  .ai-results-title {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gray-700);
-  }
-
-  .ai-results-count {
-    font-size: 0.7rem;
-    color: var(--ai);
-    font-weight: 500;
-  }
+  .ai-results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+  .ai-results-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-700); }
+  .ai-results-count { font-size: 0.7rem; color: var(--ai); font-weight: 500; }
 
   .creator-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.85rem 1rem;
-    margin-bottom: 0.5rem;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 0.85rem;
-    animation: fadeUp 0.25s ease;
-    transition: box-shadow 0.15s, border-color 0.15s;
+    background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+    padding: 0.85rem 1rem; margin-bottom: 0.5rem;
+    display: grid; grid-template-columns: auto 1fr auto;
+    align-items: center; gap: 0.85rem;
+    animation: fadeUp 0.25s ease; transition: box-shadow 0.15s, border-color 0.15s;
   }
   .creator-card:hover { box-shadow: var(--shadow-sm); border-color: var(--gray-300); }
   .creator-card.selected { border-color: var(--ai); background: var(--ai-light); }
-
   .creator-handle { font-weight: 500; font-size: 0.85rem; color: var(--gray-900); }
-  .creator-meta { font-size: 0.7rem; color: var(--gray-400); margin-top: 0.2rem; }
+  /* [FIX 8] bigger, formatted follower count */
+  .creator-followers { font-size: 0.78rem; font-weight: 600; color: var(--gray-700); margin-top: 0.15rem; }
   .creator-bio { font-size: 0.7rem; color: var(--gray-500); margin-top: 0.3rem; line-height: 1.4; font-style: italic; }
 
   .creator-select-btn {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 0.3rem 0.65rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.66rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--gray-500);
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
+    background: none; border: 1px solid var(--border); border-radius: 6px;
+    padding: 0.3rem 0.65rem; font-family: 'Jost', sans-serif;
+    font-size: 0.66rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--gray-500);
+    cursor: pointer; transition: all 0.15s; white-space: nowrap;
   }
   .creator-select-btn:hover { border-color: var(--ai); color: var(--ai); }
   .creator-card.selected .creator-select-btn { background: var(--ai); border-color: var(--ai); color: white; }
 
-  .ai-send-btn {
-    width: 100%;
-    margin-top: 0.75rem;
-    background: var(--gray-900);
-    color: var(--white);
-    border: none; border-radius: 10px;
-    padding: 0.8rem 1.5rem;
-    font-family: 'Jost', sans-serif;
-    font-weight: 500; font-size: 0.8rem;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
+  .relevance-badge {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    background: var(--ai-light); border: 1px solid var(--ai-border); color: var(--ai);
+    font-size: 0.65rem; font-weight: 600; padding: 0.15rem 0.5rem;
+    border-radius: 10px; margin-top: 0.3rem; letter-spacing: 0.03em;
   }
-  .ai-send-btn:hover { background: var(--gray-700); }
-  .ai-send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .post-matches { font-size: 0.68rem; color: var(--gray-400); margin-top: 0.25rem; line-height: 1.4; }
+  .match-tag {
+    display: inline-block; background: var(--ai-light); border: 1px solid var(--ai-border);
+    color: var(--ai); font-size: 0.62rem; padding: 0.1rem 0.4rem;
+    border-radius: 4px; margin: 0.1rem 0.1rem 0 0;
+  }
 
-  /* Original fields */
-  textarea {
-    resize: vertical; min-height: 120px;
-    line-height: 1.75; padding: 0.85rem 1rem;
-  }
+  /* Section divider */
+  .section-divider { display: flex; align-items: center; gap: 1rem; margin: 0.5rem 0 1.25rem; }
+  .section-divider-line { flex: 1; height: 1px; background: var(--border); }
+  .section-divider-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-400); white-space: nowrap; }
+
+  /* URL card */
+  .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+  .platform-tags { display: flex; gap: 0.4rem; }
+  .ptag { font-size: 0.62rem; font-weight: 600; padding: 0.18rem 0.55rem; border-radius: 4px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .ptag.ig { background: rgba(193,53,132,0.08); color: var(--instagram); border: 1px solid rgba(193,53,132,0.2); }
+  .ptag.tt { background: rgba(45,143,160,0.08); color: var(--tiktok); border: 1px solid rgba(45,143,160,0.2); }
+
+  textarea { resize: vertical; min-height: 120px; line-height: 1.75; padding: 0.85rem 1rem; }
   textarea::placeholder { color: var(--gray-300); }
 
-  .url-count { font-size: 0.7rem; color: var(--gray-400); margin-top: 0.5rem; text-align: right; }
+  .url-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; }
+  .url-count { font-size: 0.7rem; color: var(--gray-400); }
   .url-count b { color: var(--gray-700); }
+  /* [FIX 4] clear duplicates button */
+  .dedup-btn {
+    background: none; border: none; font-family: 'Jost', sans-serif;
+    font-size: 0.68rem; color: var(--gray-400); cursor: pointer;
+    text-decoration: underline; text-decoration-color: var(--gray-300);
+    transition: color 0.15s; padding: 0;
+  }
+  .dedup-btn:hover { color: var(--gray-700); }
 
+  /* Buttons */
   .run-btn {
-    width: 100%;
-    background: var(--gray-900);
-    color: var(--white);
-    border: none; border-radius: var(--radius);
-    padding: 0.95rem 2rem;
-    font-family: 'Jost', sans-serif;
-    font-weight: 500; font-size: 0.85rem;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    cursor: pointer;
+    width: 100%; background: var(--gray-900); color: var(--white);
+    border: none; border-radius: var(--radius); padding: 0.95rem 2rem;
+    font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.85rem;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
     display: flex; align-items: center; justify-content: center; gap: 0.6rem;
-    transition: all 0.2s;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    transition: all 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.15);
   }
-  .run-btn:hover:not(:disabled) {
-    background: var(--gray-700);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
-  }
+  .run-btn:hover:not(:disabled) { background: var(--gray-700); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0,0,0,0.18); }
   .run-btn:active:not(:disabled) { transform: translateY(0); }
   .run-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
 
   .spinner {
-    width: 14px; height: 14px;
-    border: 2px solid rgba(255,255,255,0.3);
+    width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.3);
     border-top-color: white; border-radius: 50%;
     animation: spin 0.7s linear infinite; display: none;
   }
   .run-btn.loading .spinner { display: block; }
-  .ai-run-btn .spinner { border-color: rgba(255,255,255,0.3); border-top-color: white; }
+  .ai-run-btn .spinner { display: none; border-color: rgba(255,255,255,0.3); border-top-color: white; }
+  .ai-run-btn.loading .spinner { display: block; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
   .error-msg {
     background: #fdf2f2; border: 1px solid #e8c5c5;
     border-radius: 10px; padding: 0.75rem 1rem;
-    font-size: 0.78rem; color: #8b3030;
-    margin-top: 0.75rem; display: none;
+    font-size: 0.78rem; color: #8b3030; margin-top: 0.75rem; display: none;
   }
+  /* [FIX 14] rate limit specific styling */
+  .error-msg.rate-limit { background: #fdf8ee; border-color: #e8d8a0; color: #7a5c10; }
 
-  .progress-wrap {
-    height: 2px; background: var(--gray-200);
-    border-radius: 2px; margin-top: 1.25rem;
-    overflow: hidden; display: none;
-  }
-  .progress-fill {
-    height: 100%; background: var(--gray-900);
-    border-radius: 2px; transition: width 0.4s ease; width: 0%;
-  }
+  .progress-wrap { height: 2px; background: var(--gray-200); border-radius: 2px; margin-top: 1.25rem; overflow: hidden; display: none; }
+  .progress-fill { height: 100%; background: var(--gray-900); border-radius: 2px; transition: width 0.4s ease; width: 0%; }
 
   /* Results */
   .results-section { margin-top: 2rem; }
+  .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 0.5rem; }
+  .results-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--gray-900); }
 
-  .results-header {
-    display: flex; justify-content: space-between;
-    align-items: baseline; margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border);
-  }
+  /* [FIX 12] result filter tabs + actions row */
+  .results-actions { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
 
-  .results-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem; font-weight: 600; color: var(--gray-900);
+  .filter-tabs { display: flex; gap: 0.25rem; }
+  .filter-tab {
+    background: var(--gray-100); border: 1px solid var(--border); border-radius: 6px;
+    padding: 0.28rem 0.7rem; font-family: 'Jost', sans-serif;
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--gray-500); cursor: pointer; transition: all 0.15s;
   }
+  .filter-tab.active { background: var(--gray-900); border-color: var(--gray-900); color: white; }
+  .filter-tab:hover:not(.active) { border-color: var(--gray-400); color: var(--gray-700); }
 
-  .export-btn {
-    background: none; border: 1px solid var(--border);
-    border-radius: 8px; color: var(--gray-500);
-    font-family: 'Jost', sans-serif;
-    font-size: 0.7rem; font-weight: 500;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 0.35rem 0.85rem; cursor: pointer; transition: all 0.2s;
+  .results-btn-group { display: flex; gap: 0.4rem; }
+
+  .export-btn, .copy-all-btn, .clear-btn {
+    background: none; border: 1px solid var(--border); border-radius: 8px;
+    color: var(--gray-500); font-family: 'Jost', sans-serif;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.35rem 0.85rem; cursor: pointer; transition: all 0.2s; white-space: nowrap;
   }
-  .export-btn:hover { border-color: var(--gray-400); color: var(--gray-700); background: var(--gray-50); }
+  .export-btn:hover, .copy-all-btn:hover { border-color: var(--gray-400); color: var(--gray-700); background: var(--gray-50); }
+  .clear-btn { color: #a05050; border-color: #e8c5c5; }
+  .clear-btn:hover { background: #fdf2f2; border-color: #c58080; color: #7a3030; }
 
   .stats-row { display: flex; gap: 1px; margin-bottom: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
-
-  .stat-chip {
-    flex: 1; background: var(--white);
-    padding: 1rem; text-align: center;
-    border-right: 1px solid var(--border);
-  }
+  .stat-chip { flex: 1; background: var(--white); padding: 1rem; text-align: center; border-right: 1px solid var(--border); }
   .stat-chip:last-child { border-right: none; }
-
-  .stat-val {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem; font-weight: 700;
-    color: var(--gray-900); display: block; line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.62rem; color: var(--gray-400);
-    text-transform: uppercase; letter-spacing: 0.1em;
-    font-weight: 500; margin-top: 0.25rem; display: block;
-  }
+  .stat-val { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--gray-900); display: block; line-height: 1; }
+  .stat-label { font-size: 0.62rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; margin-top: 0.25rem; display: block; }
 
   .result-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
-    margin-bottom: 0.6rem;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center; gap: 1rem;
-    box-shadow: var(--shadow-sm);
-    animation: fadeUp 0.28s ease;
-    transition: box-shadow 0.2s, border-color 0.2s;
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1rem 1.25rem; margin-bottom: 0.6rem;
+    display: grid; grid-template-columns: auto 1fr auto;
+    align-items: center; gap: 1rem; box-shadow: var(--shadow-sm);
+    animation: fadeUp 0.28s ease; transition: box-shadow 0.2s, border-color 0.2s;
   }
   .result-card:hover { box-shadow: var(--shadow); border-color: var(--gray-300); }
   .result-card.found { border-left: 3px solid var(--gray-900); }
   .result-card.not-found { border-left: 3px solid var(--gray-200); }
   .result-card.error { border-left: 3px solid #e8c5c5; }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-  .plat-tag {
-    font-size: 0.6rem; font-weight: 700;
-    padding: 0.22rem 0.5rem; border-radius: 4px;
-    text-transform: uppercase; letter-spacing: 0.06em;
-    flex-shrink: 0;
-  }
+  .plat-tag { font-size: 0.6rem; font-weight: 700; padding: 0.22rem 0.5rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.06em; flex-shrink: 0; }
   .plat-tag.ig { background: rgba(193,53,132,0.07); color: var(--instagram); border: 1px solid rgba(193,53,132,0.18); }
   .plat-tag.tt { background: rgba(45,143,160,0.07); color: var(--tiktok); border: 1px solid rgba(45,143,160,0.18); }
 
   .result-handle { font-weight: 500; font-size: 0.88rem; color: var(--gray-900); }
+  .result-url-link { font-size: 0.68rem; color: var(--gray-400); text-decoration: none; margin-top: 0.1rem; display: block; }
+  .result-url-link:hover { color: var(--gray-700); text-decoration: underline; }
   .result-emails { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.35rem; }
-
   .email-pill {
-    font-size: 0.71rem;
-    background: var(--gray-100);
-    color: var(--gray-700);
-    border: 1px solid var(--gray-200);
-    padding: 0.18rem 0.6rem;
-    border-radius: 20px; cursor: pointer;
-    transition: all 0.15s; font-weight: 400;
+    font-size: 0.71rem; background: var(--gray-100); color: var(--gray-700);
+    border: 1px solid var(--gray-200); padding: 0.18rem 0.6rem;
+    border-radius: 20px; cursor: pointer; transition: all 0.15s; font-weight: 400;
   }
   .email-pill:hover { background: var(--gray-900); color: var(--white); border-color: var(--gray-900); }
-
   .result-none { font-size: 0.73rem; color: var(--gray-400); margin-top: 0.3rem; }
-
   .result-status { font-size: 0.68rem; font-weight: 500; white-space: nowrap; letter-spacing: 0.04em; }
   .status-found { color: var(--gray-900); }
   .status-none { color: var(--gray-400); }
   .status-error { color: #8b3030; }
 
-  /* Section label between discovery and scanner */
-  .section-divider {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 0.5rem 0 1.25rem;
+  /* [FIX 13] session restore banner */
+  .session-banner {
+    background: var(--gray-50); border: 1px solid var(--border);
+    border-radius: 10px; padding: 0.75rem 1rem;
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1rem; gap: 1rem;
+    animation: fadeUp 0.3s ease;
   }
-  .section-divider-line { flex: 1; height: 1px; background: var(--border); }
-  .section-divider-label {
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gray-400);
-    white-space: nowrap;
+  .session-banner-text { font-size: 0.75rem; color: var(--gray-700); }
+  .session-banner-text b { color: var(--gray-900); }
+  .session-banner-btns { display: flex; gap: 0.4rem; flex-shrink: 0; }
+  .session-restore-btn {
+    background: var(--gray-900); color: white; border: none; border-radius: 6px;
+    padding: 0.3rem 0.75rem; font-family: 'Jost', sans-serif;
+    font-size: 0.68rem; font-weight: 500; cursor: pointer; transition: background 0.15s;
   }
+  .session-restore-btn:hover { background: var(--gray-700); }
+  .session-dismiss-btn {
+    background: none; color: var(--gray-400); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.3rem 0.65rem; font-family: 'Jost', sans-serif;
+    font-size: 0.68rem; cursor: pointer; transition: all 0.15s;
+  }
+  .session-dismiss-btn:hover { color: var(--gray-700); border-color: var(--gray-300); }
 
   footer {
-    text-align: center;
-    margin-top: 4rem;
-    padding-top: 1.5rem;
+    text-align: center; margin-top: 4rem; padding-top: 1.5rem;
     border-top: 1px solid var(--border);
-    font-size: 0.65rem;
-    color: var(--gray-400);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-size: 0.65rem; color: var(--gray-400); letter-spacing: 0.1em; text-transform: uppercase;
   }
 
   .toast {
     position: fixed; bottom: 2rem; left: 50%;
     transform: translateX(-50%) translateY(14px);
     background: var(--gray-900); color: var(--white);
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem; font-weight: 500;
-    letter-spacing: 0.06em;
-    padding: 0.55rem 1.3rem; border-radius: 20px;
-    opacity: 0; transition: all 0.25s;
-    pointer-events: none; z-index: 999;
+    font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.06em; padding: 0.55rem 1.3rem; border-radius: 20px;
+    opacity: 0; transition: all 0.25s; pointer-events: none; z-index: 999;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-  .kw-where-hint {
-    font-size: 0.62rem;
-    font-weight: 400;
-    color: var(--gray-400);
-    letter-spacing: 0;
-    text-transform: none;
-  }
-
-  .kw-scope-note {
-    font-size: 0.68rem;
-    color: var(--gray-400);
-    margin-top: 0.6rem;
-    line-height: 1.5;
-    font-style: italic;
-  }
-
-  /* Relevance score badge on creator cards */
-  .relevance-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    background: var(--ai-light);
-    border: 1px solid var(--ai-border);
-    color: var(--ai);
-    font-size: 0.65rem;
-    font-weight: 600;
-    padding: 0.15rem 0.5rem;
-    border-radius: 10px;
-    margin-top: 0.3rem;
-    letter-spacing: 0.03em;
-  }
-
-  .post-matches {
-    font-size: 0.68rem;
-    color: var(--gray-400);
-    margin-top: 0.25rem;
-    line-height: 1.4;
-  }
-
-  .match-tag {
-    display: inline-block;
-    background: var(--gray-100);
-    border: 1px solid var(--border);
-    color: var(--gray-600);
-    font-size: 0.62rem;
-    padding: 0.1rem 0.4rem;
-    border-radius: 4px;
-    margin: 0.1rem 0.1rem 0 0;
-  }
-
-  .match-tag.highlight {
-    background: var(--ai-light);
-    border-color: var(--ai-border);
-    color: var(--ai);
-  }
-
-  .location-disclaimer {
-    font-size: 0.63rem;
-    color: var(--gray-400);
-    margin-top: 0.45rem;
-    line-height: 1.5;
-    font-style: italic;
-  }
-
-  /* API keys section grid */
-  .api-keys-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  @media (max-width: 540px) { .api-keys-grid { grid-template-columns: 1fr; } }
-
-  .api-key-block { display: flex; flex-direction: column; gap: 0.4rem; }
 </style>
 </head>
 <body>
@@ -857,27 +548,28 @@
         <div class="step">
           <div class="step-num">01</div>
           <div class="step-title">Get Your API Keys</div>
-          <div class="step-desc">You need two keys: an <b>Apify token</b> from <a href="https://apify.com" target="_blank">apify.com</a> and a <b>Claude API key</b> from <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>. Both have free tiers.</div>
+          <div class="step-desc">You need an <b>Apify token</b> from <a href="https://apify.com" target="_blank">apify.com</a> and a <b>Claude API key</b> from <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>. Check "Remember keys" to save them in your browser.</div>
         </div>
         <div class="step">
           <div class="step-num">02</div>
           <div class="step-title">Discover Creators (AI)</div>
-          <div class="step-desc">Use the <b>AI Creator Discovery</b> panel to set your filters — platform, gender, follower range, country, and bio keywords. The AI will find matching profiles.</div>
+          <div class="step-desc">Use the <b>AI Creator Discovery</b> panel to set your filters. Claude will generate search hashtags, Apify scrapes profiles, and keywords are matched across bio, captions &amp; hashtags.</div>
         </div>
         <div class="step">
           <div class="step-num">03</div>
-          <div class="step-title">Send to Scanner</div>
-          <div class="step-desc">Select discovered profiles and click <b>Send to Email Scanner</b> — they auto-populate below. Or paste your own URLs directly.</div>
+          <div class="step-title">Add to Scanner</div>
+          <div class="step-desc">Click <b>Add</b> on any discovered profile — it instantly appears in the URL box below. Or paste your own URLs directly.</div>
         </div>
         <div class="step">
           <div class="step-num">04</div>
           <div class="step-title">Scan &amp; Export</div>
-          <div class="step-desc">Click <b>Scan Profiles</b>. Each bio is checked for an email address. Click any email to copy it, or export all results as a CSV file.</div>
+          <div class="step-desc">Click <b>Scan Profiles</b>. Filter results by found/not found. Copy all emails at once or export a CSV with handle, URL and email columns.</div>
         </div>
       </div>
       <div class="how-note">
-        <b>AI Discovery uses Claude (Anthropic)</b> to generate targeted hashtags and search terms, then Apify scrapes matching profiles and filters them against your criteria.<br>
-        <b>Note:</b> Only emails publicly visible in a profile's bio will be detected. Country filtering uses bio text clues (e.g. "Sydney", "🇦🇺") as platforms don't always expose location data.
+        <b>Scanning runs in parallel</b> — up to 4 profiles at once for speed.<br>
+        <b>Emails detected:</b> standard addresses plus obfuscated formats like <em>[at]</em>, <em>(dot)</em>, and emoji separators.<br>
+        <b>Session memory:</b> your last scan results are saved in your browser and can be restored next visit.
       </div>
     </div>
   </div>
@@ -890,7 +582,7 @@
         <span style="font-size:0.68rem;color:var(--gray-500);font-weight:500;">Apify Token</span>
         <div style="position:relative;">
           <input type="password" id="apiKey" placeholder="apify_api_xxxxxxxxxxxx" autocomplete="off">
-          <button class="toggle-vis" onclick="toggleVis('apiKey', this)" title="Show / hide">👁</button>
+          <button class="toggle-vis" onclick="toggleVis('apiKey')" title="Show / hide">👁</button>
         </div>
         <span class="api-hint"><a href="https://apify.com" target="_blank">apify.com</a> → Settings → API &amp; Integrations</span>
       </div>
@@ -898,16 +590,22 @@
         <span style="font-size:0.68rem;color:var(--gray-500);font-weight:500;">Claude API Key <span style="color:var(--ai);font-size:0.62rem;">(for AI Discovery)</span></span>
         <div style="position:relative;">
           <input type="password" id="claudeKey" placeholder="sk-ant-xxxxxxxxxxxx" autocomplete="off">
-          <button class="toggle-vis" onclick="toggleVis('claudeKey', this)" title="Show / hide">👁</button>
+          <button class="toggle-vis" onclick="toggleVis('claudeKey')" title="Show / hide">👁</button>
         </div>
         <span class="api-hint"><a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> → API Keys</span>
       </div>
+    </div>
+    <!-- [FIX 2] Remember keys -->
+    <div class="remember-row">
+      <input type="checkbox" id="rememberKeys" onchange="handleRememberKeys()">
+      <label class="remember-label" for="rememberKeys">Remember my API keys in this browser</label>
+      <span class="keys-saved-badge" id="keysSavedBadge">✓ Saved</span>
     </div>
   </div>
 
   <!-- ===== AI CREATOR DISCOVERY ===== -->
   <div class="ai-card">
-    <div class="ai-card-header" onclick="toggleAiPanel(this)" id="aiPanelHeader">
+    <div class="ai-card-header open" onclick="toggleAiPanel(this)" id="aiPanelHeader">
       <div>
         <div class="ai-card-title-row">
           <span class="ai-badge">AI</span>
@@ -918,29 +616,25 @@
       <span class="ai-chevron">▼</span>
     </div>
 
-    <div class="ai-card-body" id="aiPanelBody">
+    <div class="ai-card-body open" id="aiPanelBody">
 
-      <!-- Platform -->
       <label class="field-label">Platform</label>
-      <div class="platform-toggle-row" id="platformToggleRow">
+      <div class="platform-toggle-row">
         <button class="plat-toggle-btn active-ig" data-plat="instagram" onclick="setPlatform('instagram', this)">Instagram</button>
         <button class="plat-toggle-btn" data-plat="tiktok" onclick="setPlatform('tiktok', this)">TikTok</button>
         <button class="plat-toggle-btn" data-plat="both" onclick="setPlatform('both', this)">Both</button>
       </div>
 
       <div class="filter-grid">
-
-        <!-- Gender -->
         <div class="filter-block">
           <label class="field-label">Creator Gender</label>
-          <div class="gender-row" id="genderRow">
-            <button class="gender-btn active" data-g="female" onclick="setGender('female', this)">Female</button>
-            <button class="gender-btn" data-g="male" onclick="setGender('male', this)">Male</button>
-            <button class="gender-btn" data-g="any" onclick="setGender('any', this)">Any</button>
+          <div class="gender-row">
+            <button class="gender-btn active" onclick="setGender('female', this)">Female</button>
+            <button class="gender-btn" onclick="setGender('male', this)">Male</button>
+            <button class="gender-btn" onclick="setGender('any', this)">Any</button>
           </div>
         </div>
 
-        <!-- Country -->
         <div class="filter-block">
           <label class="field-label">Country (select all that apply)</label>
           <div class="country-chips" id="countryChips">
@@ -950,10 +644,9 @@
             <span class="country-chip" data-c="United States" onclick="toggleCountry(this)">🇺🇸 US</span>
             <span class="country-chip" data-c="Canada" onclick="toggleCountry(this)">🇨🇦 CA</span>
           </div>
-          <div class="location-disclaimer">⚠ Location is estimated from bio text and post tags — only accurate if the creator has tagged their location publicly. Results may include creators outside the selected country.</div>
+          <div class="location-disclaimer">⚠ Location is estimated from bio text and post tags — only accurate if the creator has publicly tagged their location. Results may include creators outside the selected country.</div>
         </div>
 
-        <!-- Followers Min -->
         <div class="filter-block">
           <label class="field-label">Follower Range</label>
           <div class="follower-row">
@@ -963,32 +656,27 @@
           </div>
         </div>
 
-        <!-- Niche / Category hint -->
         <div class="filter-block">
           <label class="field-label">Creator Niche (optional)</label>
           <input type="text" id="nicheInput" placeholder="e.g. lifestyle, parenting, beauty">
         </div>
-
       </div>
 
-      <!-- Keywords -->
       <label class="field-label">Keywords <span class="kw-where-hint">— matched across bio, post captions &amp; hashtags</span></label>
       <div class="keyword-chips" id="keywordChips">
-        <span class="kw-chip" data-kw="mum" onclick="toggleKw(this)">mum</span>
-        <span class="kw-chip" data-kw="wife" onclick="toggleKw(this)">wife</span>
-        <span class="kw-chip" data-kw="mother" onclick="toggleKw(this)">mother</span>
-        <span class="kw-chip" data-kw="mama" onclick="toggleKw(this)">mama</span>
-        <span class="kw-chip" data-kw="mom" onclick="toggleKw(this)">mom</span>
-        <span class="kw-chip" data-kw="blogger" onclick="toggleKw(this)">blogger</span>
-        <span class="kw-chip" data-kw="creator" onclick="toggleKw(this)">creator</span>
+        <span class="kw-chip" data-kw="mum" onclick="toggleKw(this)">mum <span class="kw-remove" onclick="removeKw(event, this)">✕</span></span>
+        <span class="kw-chip" data-kw="wife" onclick="toggleKw(this)">wife <span class="kw-remove" onclick="removeKw(event, this)">✕</span></span>
+        <span class="kw-chip" data-kw="mother" onclick="toggleKw(this)">mother <span class="kw-remove" onclick="removeKw(event, this)">✕</span></span>
+        <span class="kw-chip" data-kw="mama" onclick="toggleKw(this)">mama <span class="kw-remove" onclick="removeKw(event, this)">✕</span></span>
+        <span class="kw-chip" data-kw="mom" onclick="toggleKw(this)">mom <span class="kw-remove" onclick="removeKw(event, this)">✕</span></span>
+        <span class="kw-chip" data-kw="blogger" onclick="toggleKw(this)">blogger <span class="kw-remove" onclick="removeKw(event, this)">✕</span></span>
+        <span class="kw-chip" data-kw="creator" onclick="toggleKw(this)">creator <span class="kw-remove" onclick="removeKw(event, this)">✕</span></span>
       </div>
       <div class="kw-add-row" style="margin-top:0.5rem;">
-        <input type="text" id="kwCustomInput" placeholder="Add custom keyword..." style="padding-right:1rem;">
+        <input type="text" id="kwCustomInput" placeholder="Add custom keyword or #hashtag..." style="padding-right:1rem;">
         <button class="kw-add-btn" onclick="addCustomKw()">+ Add</button>
       </div>
-      <div class="kw-scope-note">
-        Searches bio, recent post captions, and hashtags — a creator passes if the keyword appears in <em>any</em> of them
-      </div>
+      <div class="kw-scope-note">Searches bio, recent post captions, and hashtags — a creator passes if the keyword appears in <em>any</em> of them</div>
 
       <hr class="ai-divider">
 
@@ -997,29 +685,21 @@
         <span id="aiRunBtnText">✦ Find Creators with AI</span>
       </button>
 
-      <!-- AI Progress bar -->
       <div class="ai-progress-wrap" id="aiProgressWrap">
         <div class="ai-progress-label" id="aiProgressLabel"></div>
-        <div class="ai-progress-bar">
-          <div class="ai-progress-fill" id="aiProgressFill"></div>
-        </div>
+        <div class="ai-progress-bar"><div class="ai-progress-fill" id="aiProgressFill"></div></div>
       </div>
 
-      <!-- Discovery results -->
       <div class="ai-results" id="aiResults">
         <div class="ai-results-header">
           <span class="ai-results-title">Discovered Profiles</span>
           <span class="ai-results-count" id="aiResultsCount"></span>
         </div>
         <div id="aiCreatorList"></div>
-        <button class="ai-send-btn" id="aiSendBtn" onclick="sendToScanner()" style="display:none">
-          Send Selected to Email Scanner →
-        </button>
       </div>
 
     </div>
   </div>
-  <!-- ===== END AI DISCOVERY ===== -->
 
   <div class="section-divider">
     <div class="section-divider-line"></div>
@@ -1037,7 +717,10 @@
       </div>
     </div>
     <textarea id="urlInput" placeholder="https://www.instagram.com/username/&#10;https://www.tiktok.com/@username&#10;https://www.instagram.com/another.account/"></textarea>
-    <div class="url-count">URLs detected: <b id="urlCountDisplay">0</b></div>
+    <div class="url-footer">
+      <div class="url-count">URLs detected: <b id="urlCountDisplay">0</b></div>
+      <button class="dedup-btn" onclick="deduplicateUrls()">Remove duplicates</button>
+    </div>
   </div>
 
   <button class="run-btn" id="runBtn" onclick="runScan()">
@@ -1054,8 +737,21 @@
   <div class="results-section" id="resultsSection" style="display:none">
     <div class="results-header">
       <span class="results-title">Results</span>
-      <button class="export-btn" onclick="exportCSV()">↓ Export CSV</button>
+      <div class="results-actions">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all" onclick="setResultFilter('all', this)">All</button>
+          <button class="filter-tab" data-filter="found" onclick="setResultFilter('found', this)">Emails Found</button>
+          <button class="filter-tab" data-filter="none" onclick="setResultFilter('none', this)">No Email</button>
+        </div>
+        <div class="results-btn-group">
+          <button class="copy-all-btn" onclick="copyAllEmails()">⎘ Copy All</button>
+          <button class="export-btn" onclick="exportCSV()">↓ Export CSV</button>
+          <button class="clear-btn" onclick="clearResults()">✕ Clear</button>
+        </div>
+      </div>
     </div>
+
+    <div id="sessionBannerWrap"></div>
 
     <div class="stats-row">
       <div class="stat-chip"><span class="stat-val" id="statTotal">0</span><span class="stat-label">Scanned</span></div>
@@ -1071,571 +767,761 @@
 
 </div>
 
-<div class="toast" id="toast">Copied</div>
+<div class="toast" id="toast"></div>
 
 <script>
-  // ===================== EXISTING TOOL LOGIC =====================
+// ===================== UTILITIES =====================
 
-  let results = [];
+let results = [];
+let currentFilter = 'all';
 
-  document.getElementById('urlInput').addEventListener('input', () => {
-    document.getElementById('urlCountDisplay').textContent = parseURLs().length;
+function toggleHow(btn) {
+  btn.classList.toggle('open');
+  btn.nextElementSibling.classList.toggle('open');
+}
+
+function toggleVis(id) {
+  const i = document.getElementById(id);
+  i.type = i.type === 'password' ? 'text' : 'password';
+}
+
+function showToast(msg, duration = 1800) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), duration);
+}
+
+function showError(msg, isRateLimit = false) {
+  const el = document.getElementById('errorMsg');
+  el.textContent = msg;
+  el.className = 'error-msg' + (isRateLimit ? ' rate-limit' : '');
+  el.style.display = 'block';
+  setTimeout(() => el.style.display = 'none', 7000);
+}
+
+// [FIX 8] Format follower counts nicely
+function formatFollowers(n) {
+  if (!n) return '0';
+  if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+  return n.toLocaleString();
+}
+
+// ===================== LOCAL STORAGE — API KEYS [FIX 2] =====================
+
+function loadSavedKeys() {
+  try {
+    const saved = localStorage.getItem('cs_api_keys');
+    if (saved) {
+      const { apify, claude, remember } = JSON.parse(saved);
+      if (remember) {
+        if (apify) document.getElementById('apiKey').value = apify;
+        if (claude) document.getElementById('claudeKey').value = claude;
+        document.getElementById('rememberKeys').checked = true;
+        document.getElementById('keysSavedBadge').classList.add('show');
+      }
+    }
+  } catch {}
+}
+
+function handleRememberKeys() {
+  const checked = document.getElementById('rememberKeys').checked;
+  const badge = document.getElementById('keysSavedBadge');
+  if (checked) {
+    saveKeys();
+    badge.classList.add('show');
+  } else {
+    localStorage.removeItem('cs_api_keys');
+    badge.classList.remove('show');
+  }
+}
+
+function saveKeys() {
+  try {
+    const apify = document.getElementById('apiKey').value.trim();
+    const claude = document.getElementById('claudeKey').value.trim();
+    localStorage.setItem('cs_api_keys', JSON.stringify({ apify, claude, remember: true }));
+  } catch {}
+}
+
+// Auto-save keys when they change (if remember is checked)
+['apiKey', 'claudeKey'].forEach(id => {
+  document.getElementById(id).addEventListener('change', () => {
+    if (document.getElementById('rememberKeys').checked) saveKeys();
   });
+});
 
-  function toggleHow(btn) {
-    btn.classList.toggle('open');
-    btn.nextElementSibling.classList.toggle('open');
-  }
+// ===================== SESSION HISTORY [FIX 13] =====================
 
-  function toggleVis(id, btn) {
-    const i = document.getElementById(id);
-    i.type = i.type === 'password' ? 'text' : 'password';
-  }
+function saveSession() {
+  try {
+    if (!results.length) return;
+    localStorage.setItem('cs_last_session', JSON.stringify({
+      results,
+      savedAt: Date.now()
+    }));
+  } catch {}
+}
 
-  function toggleApiVis() { toggleVis('apiKey'); }
+function loadSessionBanner() {
+  try {
+    const raw = localStorage.getItem('cs_last_session');
+    if (!raw) return;
+    const { results: saved, savedAt } = JSON.parse(raw);
+    if (!saved?.length) return;
+    const ago = Math.round((Date.now() - savedAt) / 60000);
+    const label = ago < 60 ? `${ago}m ago` : ago < 1440 ? `${Math.round(ago/60)}h ago` : `${Math.round(ago/1440)}d ago`;
+    const found = saved.filter(r => r.emails?.length > 0).length;
+    const wrap = document.getElementById('sessionBannerWrap');
+    wrap.innerHTML = `
+      <div class="session-banner">
+        <div class="session-banner-text">
+          Last session <b>${label}</b> — ${saved.length} profiles scanned, <b>${found} emails found</b>
+        </div>
+        <div class="session-banner-btns">
+          <button class="session-restore-btn" onclick="restoreSession()">Restore</button>
+          <button class="session-dismiss-btn" onclick="dismissSessionBanner()">Dismiss</button>
+        </div>
+      </div>`;
+  } catch {}
+}
 
-  function parseURLs() {
-    return document.getElementById('urlInput').value
-      .split('\n').map(l => l.trim())
-      .filter(l => /instagram\.com|tiktok\.com/i.test(l));
-  }
-
-  function detectPlatform(url) {
-    if (/instagram\.com/i.test(url)) return 'instagram';
-    if (/tiktok\.com/i.test(url)) return 'tiktok';
-    return null;
-  }
-
-  function extractHandle(url) {
-    try { return new URL(url).pathname.replace(/^\/|\/$/g, '').split('/')[0].replace('@', ''); }
-    catch { return url; }
-  }
-
-  function extractEmails(text) {
-    if (!text) return [];
-    let n = text
-      .replace(/\s*\[\s*at\s*\]\s*|\s+at\s+/gi, '@')
-      .replace(/\s*\[\s*dot\s*\]\s*|\s+dot\s+/gi, '.');
-    return [...new Set(n.match(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g) || [])];
-  }
-
-  function showError(msg) {
-    const el = document.getElementById('errorMsg');
-    el.textContent = msg; el.style.display = 'block';
-    setTimeout(() => el.style.display = 'none', 6000);
-  }
-
-  async function apifyCall(actorId, input, token) {
-    const res = await fetch(`https://api.apify.com/v2/acts/${actorId}/run-sync-get-dataset-items?token=${token}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(input)
-    });
-    if (!res.ok) throw new Error('Apify returned ' + res.status);
-    const data = await res.json();
-    if (!data?.[0]) throw new Error('No profile data returned');
-    return data;
-  }
-
-  async function fetchBio(handle, platform, token) {
-    if (platform === 'instagram') {
-      const data = await apifyCall('apify~instagram-profile-scraper', { usernames: [handle], resultsLimit: 1 }, token);
-      return data[0].biography || data[0].bio || '';
-    } else {
-      const data = await apifyCall('clockworks~free-tiktok-scraper', {
-        profiles: [`https://www.tiktok.com/@${handle}`],
-        resultsPerPage: 1,
-        shouldDownloadVideos: false,
-        shouldDownloadCovers: false
-      }, token);
-      const p = data[0].authorMeta || data[0];
-      return p.signature || p.bio || p.description || '';
-    }
-  }
-
-  function renderResult(r) {
-    const card = document.createElement('div');
-    const cls = r.platform === 'instagram' ? 'ig' : 'tt';
-    const lbl = r.platform === 'instagram' ? 'IG' : 'TT';
-    let status, body, cardClass;
-
-    if (r.error) {
-      cardClass = 'error';
-      status = `<span class="result-status status-error">Error</span>`;
-      body = `<div class="result-none">${r.error}</div>`;
-    } else if (r.emails.length > 0) {
-      cardClass = 'found';
-      status = `<span class="result-status status-found">${r.emails.length} found</span>`;
-      body = `<div class="result-emails">${r.emails.map(e =>
-        `<span class="email-pill" onclick="copyText('${e}')">${e}</span>`
-      ).join('')}</div>`;
-    } else {
-      cardClass = 'not-found';
-      status = `<span class="result-status status-none">No email</span>`;
-      body = `<div class="result-none">No email address found in bio</div>`;
-    }
-
-    card.className = `result-card ${cardClass}`;
-    card.innerHTML = `
-      <span class="plat-tag ${cls}">${lbl}</span>
-      <div>
-        <div class="result-handle">@${r.handle}</div>
-        ${body}
-      </div>
-      ${status}
-    `;
-    document.getElementById('resultsList').appendChild(card);
-  }
-
-  function updateStats() {
-    document.getElementById('statTotal').textContent = results.length;
-    document.getElementById('statFound').textContent = results.filter(r => !r.error && r.emails.length > 0).length;
-    document.getElementById('statNone').textContent = results.filter(r => !r.error && r.emails.length === 0).length;
-    document.getElementById('statErrors').textContent = results.filter(r => r.error).length;
-  }
-
-  async function runScan() {
-    const token = document.getElementById('apiKey').value.trim();
-    if (!token) { showError('Please enter your Apify API token to continue.'); return; }
-    const urls = parseURLs();
-    if (!urls.length) { showError('No valid Instagram or TikTok URLs detected. Please check your input.'); return; }
-
-    results = [];
+function restoreSession() {
+  try {
+    const { results: saved } = JSON.parse(localStorage.getItem('cs_last_session'));
+    results = saved;
     document.getElementById('resultsList').innerHTML = '';
     document.getElementById('resultsSection').style.display = 'block';
-    document.getElementById('progressWrap').style.display = 'block';
-    document.getElementById('progressFill').style.width = '0%';
+    results.forEach(r => renderResult(r));
+    updateStats();
+    dismissSessionBanner();
+    showToast('Session restored');
+  } catch {}
+}
 
-    const btn = document.getElementById('runBtn');
-    btn.classList.add('loading'); btn.disabled = true;
-    btn.querySelector('.btn-text').textContent = 'Scanning profiles...';
+function dismissSessionBanner() {
+  document.getElementById('sessionBannerWrap').innerHTML = '';
+}
 
-    for (let i = 0; i < urls.length; i++) {
-      const url = urls[i];
+// ===================== URL PARSING =====================
+
+document.getElementById('urlInput').addEventListener('input', () => {
+  document.getElementById('urlCountDisplay').textContent = parseURLs().length;
+});
+
+function parseURLs() {
+  return document.getElementById('urlInput').value
+    .split('\n').map(l => l.trim())
+    .filter(l => /instagram\.com|tiktok\.com/i.test(l));
+}
+
+function detectPlatform(url) {
+  if (/instagram\.com/i.test(url)) return 'instagram';
+  if (/tiktok\.com/i.test(url)) return 'tiktok';
+  return null;
+}
+
+function extractHandle(url) {
+  try { return new URL(url).pathname.replace(/^\/|\/$/g, '').split('/')[0].replace('@', ''); }
+  catch { return url; }
+}
+
+// [FIX 4] Deduplicate URLs
+function deduplicateUrls() {
+  const textarea = document.getElementById('urlInput');
+  const lines = textarea.value.split('\n').map(l => l.trim()).filter(Boolean);
+  const seen = new Set();
+  const deduped = lines.filter(l => {
+    const key = l.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key); return true;
+  });
+  const removed = lines.length - deduped.length;
+  textarea.value = deduped.join('\n');
+  document.getElementById('urlCountDisplay').textContent = parseURLs().length;
+  if (removed > 0) showToast(`Removed ${removed} duplicate${removed > 1 ? 's' : ''}`);
+  else showToast('No duplicates found');
+}
+
+// [FIX 5] Enhanced email extraction — handles obfuscation and emoji separators
+function extractEmails(text) {
+  if (!text) return [];
+  let n = text
+    .replace(/\[at\]|\(at\)|\s+at\s+/gi, '@')
+    .replace(/\[dot\]|\(dot\)|\s+dot\s+/gi, '.')
+    .replace(/📧|✉️|💌/g, '@')
+    .replace(/[\u200B-\u200D\uFEFF]/g, ''); // remove zero-width chars
+  const found = n.match(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g) || [];
+  return [...new Set(found)];
+}
+
+// ===================== APIFY =====================
+
+// [FIX 3 & 14] Graceful empty results + rate limit detection
+async function apifyCall(actorId, input, token) {
+  const res = await fetch(
+    `https://api.apify.com/v2/acts/${actorId}/run-sync-get-dataset-items?token=${token}`,
+    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(input) }
+  );
+  if (res.status === 429) {
+    throw Object.assign(new Error('Rate limit reached — wait a moment and try again.'), { isRateLimit: true });
+  }
+  if (!res.ok) throw new Error('Apify returned ' + res.status);
+  const data = await res.json();
+  return Array.isArray(data) ? data : []; // [FIX 3] return [] instead of throwing on empty
+}
+
+async function fetchBio(handle, platform, token) {
+  if (platform === 'instagram') {
+    const data = await apifyCall('apify~instagram-profile-scraper', { usernames: [handle], resultsLimit: 1 }, token);
+    return data[0] ? (data[0].biography || data[0].bio || '') : '';
+  } else {
+    const data = await apifyCall('clockworks~free-tiktok-scraper', {
+      profiles: [`https://www.tiktok.com/@${handle}`],
+      resultsPerPage: 1, shouldDownloadVideos: false, shouldDownloadCovers: false
+    }, token);
+    const p = data[0]?.authorMeta || data[0] || {};
+    return p.signature || p.bio || p.description || '';
+  }
+}
+
+// ===================== EMAIL SCANNER =====================
+
+function renderResult(r) {
+  const cls = r.platform === 'instagram' ? 'ig' : 'tt';
+  const lbl = r.platform === 'instagram' ? 'IG' : 'TT';
+  let status, body, cardClass;
+
+  if (r.error) {
+    cardClass = 'error';
+    status = `<span class="result-status status-error">Error</span>`;
+    body = `<div class="result-none">${r.error}</div>`;
+  } else if (r.emails.length > 0) {
+    cardClass = 'found';
+    status = `<span class="result-status status-found">${r.emails.length} found</span>`;
+    body = `<div class="result-emails">${r.emails.map(e =>
+      `<span class="email-pill" onclick="copyText('${e}')">${e}</span>`
+    ).join('')}</div>`;
+  } else {
+    cardClass = 'not-found';
+    status = `<span class="result-status status-none">No email</span>`;
+    body = `<div class="result-none">No email address found in bio</div>`;
+  }
+
+  const card = document.createElement('div');
+  card.className = `result-card ${cardClass}`;
+  card.dataset.status = r.emails.length > 0 ? 'found' : (r.error ? 'error' : 'none');
+  card.innerHTML = `
+    <span class="plat-tag ${cls}">${lbl}</span>
+    <div>
+      <div class="result-handle">@${r.handle}</div>
+      <a class="result-url-link" href="${r.url}" target="_blank">${r.url}</a>
+      ${body}
+    </div>
+    ${status}
+  `;
+
+  // Hide based on current filter
+  if (currentFilter !== 'all' && card.dataset.status !== currentFilter) {
+    card.style.display = 'none';
+  }
+
+  document.getElementById('resultsList').appendChild(card);
+}
+
+function updateStats() {
+  document.getElementById('statTotal').textContent = results.length;
+  document.getElementById('statFound').textContent = results.filter(r => !r.error && r.emails.length > 0).length;
+  document.getElementById('statNone').textContent = results.filter(r => !r.error && r.emails.length === 0).length;
+  document.getElementById('statErrors').textContent = results.filter(r => r.error).length;
+}
+
+// [FIX 12] Filter tabs
+function setResultFilter(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.result-card').forEach(card => {
+    card.style.display = (filter === 'all' || card.dataset.status === filter) ? '' : 'none';
+  });
+}
+
+// [FIX 7] Copy all emails
+function copyAllEmails() {
+  const emails = results.flatMap(r => r.emails || []);
+  if (!emails.length) { showToast('No emails to copy'); return; }
+  navigator.clipboard.writeText([...new Set(emails)].join('\n')).then(() => {
+    showToast(`${[...new Set(emails)].length} email${emails.length !== 1 ? 's' : ''} copied`);
+  });
+}
+
+// [FIX 6] Clear results
+function clearResults() {
+  results = [];
+  document.getElementById('resultsList').innerHTML = '';
+  document.getElementById('resultsSection').style.display = 'none';
+  currentFilter = 'all';
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('[data-filter="all"]').classList.add('active');
+}
+
+// [FIX 2] Batch scanning — 4 at a time
+async function runScan() {
+  const token = document.getElementById('apiKey').value.trim();
+  if (!token) { showError('Please enter your Apify API token to continue.'); return; }
+
+  // [FIX 4] Auto-dedup before scanning
+  deduplicateUrls();
+
+  const urls = parseURLs();
+  if (!urls.length) { showError('No valid Instagram or TikTok URLs detected.'); return; }
+
+  // [FIX 6] Clear previous results
+  results = [];
+  document.getElementById('resultsList').innerHTML = '';
+  document.getElementById('resultsSection').style.display = 'block';
+  document.getElementById('progressWrap').style.display = 'block';
+  document.getElementById('progressFill').style.width = '0%';
+
+  const btn = document.getElementById('runBtn');
+  btn.classList.add('loading'); btn.disabled = true;
+  btn.querySelector('.btn-text').textContent = 'Scanning profiles...';
+
+  let completed = 0;
+  const BATCH = 4; // [FIX 1] parallel batches
+
+  for (let i = 0; i < urls.length; i += BATCH) {
+    const batch = urls.slice(i, i + BATCH);
+    const batchResults = await Promise.all(batch.map(async url => {
       const platform = detectPlatform(url);
       const handle = extractHandle(url);
       let bio = '', error = null;
-
       try { bio = await fetchBio(handle, platform, token); }
-      catch (e) { error = e.message; }
-
-      const emails = error ? [] : extractEmails(bio);
-      const r = { url, platform, handle, emails, error };
-      results.push(r); renderResult(r); updateStats();
-      document.getElementById('progressFill').style.width = Math.round(((i + 1) / urls.length) * 100) + '%';
-    }
-
-    btn.classList.remove('loading'); btn.disabled = false;
-    btn.querySelector('.btn-text').textContent = 'Scan Profiles';
-    document.getElementById('progressWrap').style.display = 'none';
-  }
-
-  function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => showToast('Copied!'));
-  }
-
-  function copyEmail(email) { copyText(email); }
-
-  function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 1800);
-  }
-
-  function exportCSV() {
-    if (!results.length) return;
-    // Only export rows that have at least one email
-    const withEmails = results.filter(r => !r.error && r.emails.length > 0);
-    if (!withEmails.length) { showToast('No emails to export'); return; }
-    const rows = [
-      ['Profile URL', 'Email Address'],
-      ...withEmails.flatMap(r =>
-        r.emails.map(email => [`"${r.url}"`, `"${email}"`])
-      )
-    ];
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(new Blob([rows.map(r => r.join(',')).join('\n')], { type: 'text/csv' }));
-    a.download = 'camile-stone-emails.csv';
-    a.click();
-  }
-
-  // ===================== AI DISCOVERY LOGIC =====================
-
-  let selectedPlatform = 'instagram';
-  let selectedGender = 'female';
-  let discoveredCreators = [];
-  let selectedCreatorUrls = new Set();
-
-  // Panel toggle
-  function toggleAiPanel(header) {
-    header.classList.toggle('open');
-    document.getElementById('aiPanelBody').classList.toggle('open');
-  }
-
-  // Open panel by default
-  document.getElementById('aiPanelHeader').classList.add('open');
-  document.getElementById('aiPanelBody').classList.add('open');
-
-  function setPlatform(plat, btn) {
-    selectedPlatform = plat;
-    document.querySelectorAll('.plat-toggle-btn').forEach(b => {
-      b.classList.remove('active-ig', 'active-tt', 'active-both');
-    });
-    if (plat === 'instagram') btn.classList.add('active-ig');
-    else if (plat === 'tiktok') btn.classList.add('active-tt');
-    else btn.classList.add('active-both');
-  }
-
-  function setGender(g, btn) {
-    selectedGender = g;
-    document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  }
-
-  function toggleCountry(chip) { chip.classList.toggle('active'); }
-
-  function toggleKw(chip) {
-    chip.classList.toggle('active');
-    const isActive = chip.classList.contains('active');
-    chip.textContent = chip.dataset.kw + (isActive ? ' ✕' : '');
-  }
-
-  function addCustomKw() {
-    const input = document.getElementById('kwCustomInput');
-    const val = input.value.trim().toLowerCase();
-    if (!val) return;
-    const chip = document.createElement('span');
-    chip.className = 'kw-chip active';
-    chip.dataset.kw = val;
-    chip.textContent = val + ' ✕';
-    chip.onclick = function() { toggleKw(this); };
-    document.getElementById('keywordChips').appendChild(chip);
-    input.value = '';
-  }
-
-  document.getElementById('kwCustomInput').addEventListener('keydown', e => {
-    if (e.key === 'Enter') addCustomKw();
-  });
-
-  function getActiveKeywords() {
-    return [...document.querySelectorAll('.kw-chip.active')].map(c => c.dataset.kw);
-  }
-
-  function getActiveCountries() {
-    return [...document.querySelectorAll('.country-chip.active')].map(c => c.dataset.c);
-  }
-
-  let aiProgressSteps = 0;
-  let aiProgressCurrent = 0;
-
-  function setProgress(pct, label) {
-    document.getElementById('aiProgressWrap').style.display = 'block';
-    document.getElementById('aiProgressFill').style.width = pct + '%';
-    document.getElementById('aiProgressLabel').textContent = label;
-  }
-
-  function clearProgress() {
-    document.getElementById('aiProgressWrap').style.display = 'none';
-    document.getElementById('aiProgressFill').style.width = '0%';
-    document.getElementById('aiProgressLabel').textContent = '';
-  }
-
-  async function callClaude(claudeKey, prompt) {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': claudeKey,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-5-20250929',
-        max_tokens: 1000,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      throw new Error(err.error?.message || 'Claude API error: ' + res.status);
-    }
-    const data = await res.json();
-    return data.content.map(b => b.text || '').join('');
-  }
-
-  // Filter by follower count and country only (keywords handled per-mode separately)
-  // Filter by follower count only
-  function baseFilter(profiles, filters) {
-    return profiles.filter(p => {
-      const followers = p.followersCount || p.followers || p.fans || 0;
-      if (filters.minFollowers && followers < filters.minFollowers) return false;
-      if (filters.maxFollowers && followers > filters.maxFollowers) return false;
-      return true;
-    });
-  }
-
-  // Check keywords across bio, post captions, and hashtags
-  // Returns quickly on bio match; only hits Apify for posts if bio doesn't match
-  async function checkKeywords(profile, keywords, platform, apifyToken) {
-    if (!keywords.length) return { passed: true, bioMatch: false, postScore: 0, postMatches: [] };
-
-    const bio = (profile.biography || profile.bio || profile.signature || profile.description || '').toLowerCase();
-    const bioMatch = keywords.some(kw => bio.includes(kw.toLowerCase()));
-    if (bioMatch) return { passed: true, bioMatch: true, postScore: 0, postMatches: [] };
-
-    // Bio didn't match — scan recent post captions + hashtags
-    try {
-      const handle = profile.username || profile.uniqueId || '';
-      let postTexts = [];
-
-      if (platform === 'instagram') {
-        const posts = await apifyCall('apify~instagram-post-scraper', {
-          username: handle, resultsLimit: 12
-        }, apifyToken);
-        postTexts = posts.map(p => (p.caption || p.text || p.description || '').toLowerCase());
-      } else {
-        const data = await apifyCall('clockworks~free-tiktok-scraper', {
-          profiles: [`https://www.tiktok.com/@${handle}`],
-          resultsPerPage: 12, shouldDownloadVideos: false, shouldDownloadCovers: false
-        }, apifyToken);
-        postTexts = data.map(d => (d.text || d.desc || d.description || '').toLowerCase());
+      catch (e) {
+        if (e.isRateLimit) error = 'Rate limit — try again shortly';
+        else error = e.message;
       }
+      const emails = error ? [] : extractEmails(bio);
+      return { url, platform, handle, emails, error };
+    }));
 
-      let postScore = 0;
-      const postMatches = [];
-      keywords.forEach(kw => {
-        const hits = postTexts.filter(t => t.includes(kw.toLowerCase())).length;
-        if (hits > 0) { postScore += hits; postMatches.push({ kw, hits }); }
-      });
+    batchResults.forEach(r => {
+      results.push(r);
+      renderResult(r);
+    });
 
-      return { passed: postScore > 0, bioMatch: false, postScore, postMatches };
-    } catch {
-      return { passed: false, bioMatch: false, postScore: 0, postMatches: [] };
-    }
+    completed += batch.length;
+    updateStats();
+    document.getElementById('progressFill').style.width = Math.round((completed / urls.length) * 100) + '%';
   }
 
-  function renderCreatorCard(profile, platform, matchInfo) {
-    const handle = profile.username || profile.uniqueId || profile.handle || 'unknown';
-    const followers = (profile.followersCount || profile.followers || profile.fans || 0).toLocaleString();
-    const bio = profile.biography || profile.bio || profile.signature || profile.description || '';
-    const url = platform === 'instagram'
-      ? `https://www.instagram.com/${handle}/`
-      : `https://www.tiktok.com/@${handle}`;
-    const platCls = platform === 'instagram' ? 'ig' : 'tt';
-    const platLbl = platform === 'instagram' ? 'IG' : 'TT';
+  btn.classList.remove('loading'); btn.disabled = false;
+  btn.querySelector('.btn-text').textContent = 'Scan Profiles';
+  document.getElementById('progressWrap').style.display = 'none';
 
-    let matchHtml = '';
-    if (matchInfo?.bioMatch) {
-      matchHtml = `<div class="relevance-badge">✦ Bio match</div>`;
-    } else if (matchInfo?.postScore > 0) {
-      const tags = matchInfo.postMatches.map(m =>
-        `<span class="match-tag highlight">${m.kw} ×${m.hits}</span>`).join('');
-      matchHtml = `
-        <div class="relevance-badge">✦ ${matchInfo.postScore} post match${matchInfo.postScore !== 1 ? 'es' : ''}</div>
-        <div class="post-matches">${tags}</div>`;
-    }
+  // [FIX 13] Save session
+  saveSession();
+}
 
-    const card = document.createElement('div');
-    card.className = 'creator-card';
-    card.dataset.url = url;
-    card.innerHTML = `
-      <span class="plat-tag ${platCls}">${platLbl}</span>
-      <div>
-        <div class="creator-handle">@${handle}</div>
-        <div class="creator-meta">${followers} followers</div>
-        ${bio ? `<div class="creator-bio">${bio.slice(0, 110)}${bio.length > 110 ? '…' : ''}</div>` : ''}
-        ${matchHtml}
-      </div>
-      <button class="creator-select-btn" onclick="toggleCreatorSelect(this, '${url}')">Add</button>
-    `;
-    document.getElementById('aiCreatorList').appendChild(card);
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(() => showToast('Copied!'));
+}
+
+// [FIX 11] Export CSV with handle column
+function exportCSV() {
+  if (!results.length) return;
+  const withEmails = results.filter(r => !r.error && r.emails.length > 0);
+  if (!withEmails.length) { showToast('No emails to export'); return; }
+  const rows = [
+    ['Handle', 'Profile URL', 'Email Address'],
+    ...withEmails.flatMap(r =>
+      r.emails.map(email => [`"@${r.handle}"`, `"${r.url}"`, `"${email}"`])
+    )
+  ];
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([rows.map(r => r.join(',')).join('\n')], { type: 'text/csv' }));
+  a.download = 'camile-stone-emails.csv';
+  a.click();
+}
+
+// ===================== AI DISCOVERY =====================
+
+let selectedPlatform = 'instagram';
+let selectedGender = 'female';
+let selectedCreatorUrls = new Set();
+
+function toggleAiPanel(header) {
+  header.classList.toggle('open');
+  document.getElementById('aiPanelBody').classList.toggle('open');
+}
+
+function setPlatform(plat, btn) {
+  selectedPlatform = plat;
+  document.querySelectorAll('.plat-toggle-btn').forEach(b => b.classList.remove('active-ig', 'active-tt', 'active-both'));
+  if (plat === 'instagram') btn.classList.add('active-ig');
+  else if (plat === 'tiktok') btn.classList.add('active-tt');
+  else btn.classList.add('active-both');
+}
+
+function setGender(g, btn) {
+  selectedGender = g;
+  document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function toggleCountry(chip) { chip.classList.toggle('active'); }
+
+// [FIX 9] Keyword toggle and remove
+function toggleKw(chip) {
+  // Don't toggle if clicking the remove button
+  chip.classList.toggle('active');
+}
+
+function removeKw(e, removeBtn) {
+  e.stopPropagation();
+  removeBtn.closest('.kw-chip').remove();
+}
+
+function addCustomKw() {
+  const input = document.getElementById('kwCustomInput');
+  const val = input.value.trim().toLowerCase().replace(/^#/, '');
+  if (!val) return;
+  // Don't add duplicate
+  const existing = [...document.querySelectorAll('.kw-chip')].map(c => c.dataset.kw);
+  if (existing.includes(val)) { showToast('Keyword already exists'); return; }
+
+  const chip = document.createElement('span');
+  chip.className = 'kw-chip active';
+  chip.dataset.kw = val;
+  chip.onclick = function() { toggleKw(this); };
+  chip.innerHTML = `${val} <span class="kw-remove" onclick="removeKw(event, this)">✕</span>`;
+  document.getElementById('keywordChips').appendChild(chip);
+  input.value = '';
+}
+
+document.getElementById('kwCustomInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') addCustomKw();
+});
+
+function getActiveKeywords() {
+  return [...document.querySelectorAll('.kw-chip.active')].map(c => c.dataset.kw);
+}
+
+function getActiveCountries() {
+  return [...document.querySelectorAll('.country-chip.active')].map(c => c.dataset.c);
+}
+
+// Progress helpers
+function setProgress(pct, label) {
+  document.getElementById('aiProgressWrap').style.display = 'block';
+  document.getElementById('aiProgressFill').style.width = pct + '%';
+  document.getElementById('aiProgressLabel').textContent = label;
+}
+
+function clearProgress() {
+  document.getElementById('aiProgressWrap').style.display = 'none';
+  document.getElementById('aiProgressFill').style.width = '0%';
+  document.getElementById('aiProgressLabel').textContent = '';
+}
+
+async function callClaude(claudeKey, prompt) {
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': claudeKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-5-20250929',
+      max_tokens: 1000,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  });
+  if (res.status === 429) throw Object.assign(new Error('Claude API rate limit — wait a moment and try again.'), { isRateLimit: true });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error?.message || 'Claude API error: ' + res.status);
   }
+  const data = await res.json();
+  return data.content.map(b => b.text || '').join('');
+}
 
-  function toggleCreatorSelect(btn, url) {
-    const card = btn.closest('.creator-card');
-    const isSelected = card.classList.contains('selected');
-    if (isSelected) {
-      card.classList.remove('selected');
-      btn.textContent = 'Add';
-      // Remove URL from textarea
-      const textarea = document.getElementById('urlInput');
-      textarea.value = textarea.value.split('\n').filter(l => l.trim() !== url).join('\n');
-      document.getElementById('urlCountDisplay').textContent = parseURLs().length;
+function baseFilter(profiles, filters) {
+  return profiles.filter(p => {
+    const followers = p.followersCount || p.followers || p.fans || 0;
+    if (filters.minFollowers && followers < filters.minFollowers) return false;
+    if (filters.maxFollowers && followers > filters.maxFollowers) return false;
+    return true;
+  });
+}
+
+async function checkKeywords(profile, keywords, platform, apifyToken) {
+  if (!keywords.length) return { passed: true, bioMatch: false, postScore: 0, postMatches: [] };
+
+  const bio = (profile.biography || profile.bio || profile.signature || profile.description || '').toLowerCase();
+  const bioMatch = keywords.some(kw => bio.includes(kw.toLowerCase()));
+  if (bioMatch) return { passed: true, bioMatch: true, postScore: 0, postMatches: [] };
+
+  try {
+    const handle = profile.username || profile.uniqueId || '';
+    let postTexts = [];
+
+    if (platform === 'instagram') {
+      const posts = await apifyCall('apify~instagram-post-scraper', { username: handle, resultsLimit: 12 }, apifyToken);
+      postTexts = posts.map(p => (p.caption || p.text || p.description || '').toLowerCase());
     } else {
-      card.classList.add('selected');
-      btn.textContent = '✓ Added';
-      // Add URL directly to textarea
-      const textarea = document.getElementById('urlInput');
-      const existing = textarea.value.trim();
-      textarea.value = existing ? existing + '\n' + url : url;
-      document.getElementById('urlCountDisplay').textContent = parseURLs().length;
-      showToast('@' + url.split('/').filter(Boolean).pop().replace('@','') + ' added to scanner');
+      const data = await apifyCall('clockworks~free-tiktok-scraper', {
+        profiles: [`https://www.tiktok.com/@${handle}`],
+        resultsPerPage: 12, shouldDownloadVideos: false, shouldDownloadCovers: false
+      }, apifyToken);
+      postTexts = data.map(d => (d.text || d.desc || d.description || '').toLowerCase());
     }
+
+    let postScore = 0;
+    const postMatches = [];
+    keywords.forEach(kw => {
+      const hits = postTexts.filter(t => t.includes(kw.toLowerCase())).length;
+      if (hits > 0) { postScore += hits; postMatches.push({ kw, hits }); }
+    });
+
+    return { passed: postScore > 0, bioMatch: false, postScore, postMatches };
+  } catch {
+    return { passed: false, bioMatch: false, postScore: 0, postMatches: [] };
+  }
+}
+
+// [FIX 8 + 10] Creator card with formatted followers and URL flash on add
+function renderCreatorCard(profile, platform, matchInfo) {
+  const handle = profile.username || profile.uniqueId || profile.handle || 'unknown';
+  const rawFollowers = profile.followersCount || profile.followers || profile.fans || 0;
+  const followers = formatFollowers(rawFollowers);
+  const bio = profile.biography || profile.bio || profile.signature || profile.description || '';
+  const url = platform === 'instagram'
+    ? `https://www.instagram.com/${handle}/`
+    : `https://www.tiktok.com/@${handle}`;
+  const platCls = platform === 'instagram' ? 'ig' : 'tt';
+  const platLbl = platform === 'instagram' ? 'IG' : 'TT';
+
+  let matchHtml = '';
+  if (matchInfo?.bioMatch) {
+    matchHtml = `<div class="relevance-badge">✦ Bio match</div>`;
+  } else if (matchInfo?.postScore > 0) {
+    const tags = matchInfo.postMatches.map(m =>
+      `<span class="match-tag">${m.kw} ×${m.hits}</span>`).join('');
+    matchHtml = `<div class="relevance-badge">✦ ${matchInfo.postScore} post match${matchInfo.postScore !== 1 ? 'es' : ''}</div><div class="post-matches">${tags}</div>`;
   }
 
-  function sendToScanner() {}
+  const card = document.createElement('div');
+  card.className = 'creator-card';
+  card.dataset.url = url;
+  card.innerHTML = `
+    <span class="plat-tag ${platCls}">${platLbl}</span>
+    <div>
+      <div class="creator-handle">@${handle}</div>
+      <div class="creator-followers">${followers} followers</div>
+      ${bio ? `<div class="creator-bio">${bio.slice(0, 110)}${bio.length > 110 ? '…' : ''}</div>` : ''}
+      ${matchHtml}
+    </div>
+    <button class="creator-select-btn" onclick="toggleCreatorSelect(this, '${url}')">Add</button>
+  `;
+  document.getElementById('aiCreatorList').appendChild(card);
+}
 
-  async function runAiDiscovery() {
-    const claudeKey = document.getElementById('claudeKey').value.trim();
-    const apifyToken = document.getElementById('apiKey').value.trim();
-    if (!claudeKey) { showError('Please enter your Claude API key to use AI Discovery.'); return; }
-    if (!apifyToken) { showError('Please enter your Apify token to use AI Discovery.'); return; }
+function toggleCreatorSelect(btn, url) {
+  const card = btn.closest('.creator-card');
+  const isSelected = card.classList.contains('selected');
 
-    const keywords = getActiveKeywords();
-    const countries = getActiveCountries();
-    const minFollowers = parseInt(document.getElementById('followerMin').value) || 0;
-    const maxFollowers = parseInt(document.getElementById('followerMax').value) || 9999999;
-    const niche = document.getElementById('nicheInput').value.trim();
-    const gender = selectedGender;
-    const platform = selectedPlatform;
+  if (isSelected) {
+    card.classList.remove('selected');
+    btn.textContent = 'Add';
+    const textarea = document.getElementById('urlInput');
+    textarea.value = textarea.value.split('\n').filter(l => l.trim() !== url).join('\n');
+    document.getElementById('urlCountDisplay').textContent = parseURLs().length;
+  } else {
+    card.classList.add('selected');
+    btn.textContent = '✓ Added';
+    const textarea = document.getElementById('urlInput');
+    const existing = textarea.value.trim();
+    textarea.value = existing ? existing + '\n' + url : url;
+    document.getElementById('urlCountDisplay').textContent = parseURLs().length;
 
-    clearProgress();
-    document.getElementById('aiResults').classList.remove('open');
-    document.getElementById('aiCreatorList').innerHTML = '';
-    selectedCreatorUrls.clear();
-    discoveredCreators = [];
+    // [FIX 10] flash the textarea
+    textarea.classList.remove('flash');
+    void textarea.offsetWidth; // reflow
+    textarea.classList.add('flash');
+    setTimeout(() => textarea.classList.remove('flash'), 800);
 
-    const btn = document.getElementById('aiRunBtn');
-    btn.disabled = true;
-    document.getElementById('aiSpinner').style.display = 'block';
-    document.getElementById('aiRunBtnText').textContent = 'Thinking...';
+    const handle = url.split('/').filter(Boolean).pop().replace('@', '');
+    showToast(`@${handle} added to scanner`);
+  }
+}
 
-    try {
-      // Step 1: Claude generates search strategy
-      setProgress(5, 'Asking Claude to generate a search strategy…');
-      const platformStr = platform === 'both' ? 'Instagram and TikTok' : platform;
-      const prompt = `You are a social media influencer discovery agent.
+async function runAiDiscovery() {
+  const claudeKey = document.getElementById('claudeKey').value.trim();
+  const apifyToken = document.getElementById('apiKey').value.trim();
+  if (!claudeKey) { showError('Please enter your Claude API key to use AI Discovery.'); return; }
+  if (!apifyToken) { showError('Please enter your Apify token to use AI Discovery.'); return; }
+
+  const keywords = getActiveKeywords();
+  const countries = getActiveCountries();
+  const minFollowers = parseInt(document.getElementById('followerMin').value) || 0;
+  const maxFollowers = parseInt(document.getElementById('followerMax').value) || 9999999;
+  const niche = document.getElementById('nicheInput').value.trim();
+  const gender = selectedGender;
+  const platform = selectedPlatform;
+
+  clearProgress();
+  document.getElementById('aiResults').classList.remove('open');
+  document.getElementById('aiCreatorList').innerHTML = '';
+  selectedCreatorUrls.clear();
+
+  const btn = document.getElementById('aiRunBtn');
+  btn.classList.add('loading'); btn.disabled = true;
+  document.getElementById('aiRunBtnText').textContent = 'Thinking...';
+
+  try {
+    setProgress(5, 'Asking Claude to generate a search strategy…');
+    const platformStr = platform === 'both' ? 'Instagram and TikTok' : platform;
+    const prompt = `You are a social media influencer discovery agent.
 
 Find ${gender === 'any' ? '' : gender + ' '}creators on ${platformStr} matching:
 - Follower count: ${minFollowers.toLocaleString()} to ${maxFollowers.toLocaleString()}
 - Based in: ${countries.length > 0 ? countries.join(', ') : 'any country'}
-- Keywords to look for: ${keywords.length ? keywords.join(', ') : 'lifestyle, parenting, family'}
+- Keywords: ${keywords.length ? keywords.join(', ') : 'lifestyle, parenting, family'}
 ${niche ? `- Niche: ${niche}` : ''}
 
 Generate 10 hashtags these creators are likely to post under.
 Respond ONLY with valid JSON, no markdown:
 {"hashtags":["tag1","tag2",...],"bioKeywords":["phrase1",...],"inspirationAccounts":["@acc1",...]}`;
 
-      const claudeResponse = await callClaude(claudeKey, prompt);
-      let strategy;
-      try {
-        strategy = JSON.parse(claudeResponse.replace(/```json|```/g, '').trim());
-      } catch {
-        throw new Error('Claude returned unexpected format. Please try again.');
-      }
-
-      setProgress(15, `Searching hashtags on ${platformStr}…`);
-
-      // Step 2: Scrape profiles via hashtag search
-      const platforms = platform === 'both' ? ['instagram', 'tiktok'] : [platform];
-      let allProfiles = [];
-      const totalHashtags = platforms.length * 3;
-      let hashtagsDone = 0;
-
-      for (const plat of platforms) {
-        for (const hashtag of strategy.hashtags.slice(0, 3)) {
-          try {
-            let profiles = [];
-            if (plat === 'instagram') {
-              const data = await apifyCall('apify~instagram-hashtag-scraper', {
-                hashtags: [hashtag.replace('#', '')], resultsLimit: 20
-              }, apifyToken);
-              const usernames = [...new Set(data.map(p => p.ownerUsername || p.username).filter(Boolean))];
-              for (const username of usernames.slice(0, 6)) {
-                try {
-                  const pd = await apifyCall('apify~instagram-profile-scraper', { usernames: [username], resultsLimit: 1 }, apifyToken);
-                  if (pd[0]) profiles.push({ ...pd[0], _platform: 'instagram' });
-                } catch {}
-              }
-            } else {
-              const data = await apifyCall('clockworks~free-tiktok-scraper', {
-                hashtags: [hashtag.replace('#', '')], resultsPerPage: 15,
-                shouldDownloadVideos: false, shouldDownloadCovers: false
-              }, apifyToken);
-              profiles = data.map(d => ({
-                username: d.authorMeta?.name || d.uniqueId,
-                biography: d.authorMeta?.signature || '',
-                followersCount: d.authorMeta?.fans || 0,
-                _platform: 'tiktok'
-              }));
-            }
-            allProfiles.push(...profiles);
-          } catch {}
-          hashtagsDone++;
-          const pct = 15 + Math.round((hashtagsDone / totalHashtags) * 40);
-          setProgress(pct, `Scanning hashtags… (${hashtagsDone} of ${totalHashtags})`);
-        }
-      }
-
-      // Step 3: Deduplicate
-      const seen = new Set();
-      allProfiles = allProfiles.filter(p => {
-        const key = (p.username || p.uniqueId || '').toLowerCase();
-        if (seen.has(key) || !key) return false;
-        seen.add(key); return true;
-      });
-
-      // Step 4: Follower filter
-      const candidates = baseFilter(allProfiles, { minFollowers, maxFollowers });
-      setProgress(58, `Checking keywords across ${candidates.length} profiles…`);
-
-      // Step 5: Keyword check — bio first (fast), then posts+captions if needed
-      const matched = [];
-      for (let i = 0; i < candidates.length; i++) {
-        const profile = candidates[i];
-        const plat = profile._platform || (platform === 'both' ? 'instagram' : platform);
-        const handle = profile.username || profile.uniqueId || '?';
-        const pct = 58 + Math.round(((i + 1) / candidates.length) * 37);
-
-        if (keywords.length === 0) {
-          matched.push({ profile, plat, matchInfo: null });
-        } else {
-          const bio = (profile.biography || profile.bio || profile.signature || profile.description || '').toLowerCase();
-          const bioMatch = keywords.some(kw => bio.includes(kw.toLowerCase()));
-          if (bioMatch) {
-            matched.push({ profile, plat, matchInfo: { bioMatch: true, postScore: 0, postMatches: [] } });
-            setProgress(pct, `@${handle} matched in bio`);
-          } else {
-            setProgress(pct, `Scanning posts for @${handle}…`);
-            const result = await checkKeywords(profile, keywords, plat, apifyToken);
-            if (result.passed) matched.push({ profile, plat, matchInfo: result });
-          }
-        }
-      }
-
-      // Sort: bio matches first, then by post score
-      matched.sort((a, b) => {
-        if (a.matchInfo?.bioMatch && !b.matchInfo?.bioMatch) return -1;
-        if (!a.matchInfo?.bioMatch && b.matchInfo?.bioMatch) return 1;
-        return (b.matchInfo?.postScore || 0) - (a.matchInfo?.postScore || 0);
-      });
-
-      setProgress(100, `Found ${matched.length} creator${matched.length !== 1 ? 's' : ''}`);
-
-      document.getElementById('aiResults').classList.add('open');
-      document.getElementById('aiResultsCount').textContent = `${matched.length} creator${matched.length !== 1 ? 's' : ''} found`;
-
-      if (matched.length === 0) {
-        document.getElementById('aiCreatorList').innerHTML = `
-          <div style="text-align:center;padding:1.5rem;color:var(--gray-400);font-size:0.8rem;">
-            No profiles matched. Try broadening your follower range or removing some keywords.
-          </div>`;
-      } else {
-        matched.forEach(({ profile, plat, matchInfo }) => renderCreatorCard(profile, plat, matchInfo));
-      }
-
-      setTimeout(() => clearProgress(), 1200);
-
-    } catch (e) {
-      setProgress(100, `Error: ${e.message}`);
-      showError(e.message);
-    } finally {
-      btn.disabled = false;
-      document.getElementById('aiSpinner').style.display = 'none';
-      document.getElementById('aiRunBtnText').textContent = '✦ Find Creators with AI';
+    const claudeResponse = await callClaude(claudeKey, prompt);
+    let strategy;
+    try {
+      strategy = JSON.parse(claudeResponse.replace(/```json|```/g, '').trim());
+    } catch {
+      throw new Error('Claude returned unexpected format. Please try again.');
     }
+
+    setProgress(15, `Searching hashtags on ${platformStr}…`);
+
+    const platforms = platform === 'both' ? ['instagram', 'tiktok'] : [platform];
+    let allProfiles = [];
+    const totalHashtags = platforms.length * 3;
+    let hashtagsDone = 0;
+
+    for (const plat of platforms) {
+      for (const hashtag of strategy.hashtags.slice(0, 3)) {
+        try {
+          let profiles = [];
+          if (plat === 'instagram') {
+            const data = await apifyCall('apify~instagram-hashtag-scraper', {
+              hashtags: [hashtag.replace('#', '')], resultsLimit: 20
+            }, apifyToken);
+            const usernames = [...new Set(data.map(p => p.ownerUsername || p.username).filter(Boolean))];
+            for (const username of usernames.slice(0, 6)) {
+              try {
+                const pd = await apifyCall('apify~instagram-profile-scraper', { usernames: [username], resultsLimit: 1 }, apifyToken);
+                if (pd[0]) profiles.push({ ...pd[0], _platform: 'instagram' });
+              } catch {}
+            }
+          } else {
+            const data = await apifyCall('clockworks~free-tiktok-scraper', {
+              hashtags: [hashtag.replace('#', '')], resultsPerPage: 15,
+              shouldDownloadVideos: false, shouldDownloadCovers: false
+            }, apifyToken);
+            profiles = data.map(d => ({
+              username: d.authorMeta?.name || d.uniqueId,
+              biography: d.authorMeta?.signature || '',
+              followersCount: d.authorMeta?.fans || 0,
+              _platform: 'tiktok'
+            }));
+          }
+          allProfiles.push(...profiles);
+        } catch (e) {
+          if (e.isRateLimit) throw e;
+        }
+        hashtagsDone++;
+        setProgress(15 + Math.round((hashtagsDone / totalHashtags) * 40), `Scanning hashtags… (${hashtagsDone} of ${totalHashtags})`);
+      }
+    }
+
+    // Deduplicate
+    const seen = new Set();
+    allProfiles = allProfiles.filter(p => {
+      const key = (p.username || p.uniqueId || '').toLowerCase();
+      if (seen.has(key) || !key) return false;
+      seen.add(key); return true;
+    });
+
+    const candidates = baseFilter(allProfiles, { minFollowers, maxFollowers });
+    setProgress(58, `Checking keywords across ${candidates.length} profiles…`);
+
+    const matched = [];
+    for (let i = 0; i < candidates.length; i++) {
+      const profile = candidates[i];
+      const plat = profile._platform || (platform === 'both' ? 'instagram' : platform);
+      const handle = profile.username || profile.uniqueId || '?';
+      const pct = 58 + Math.round(((i + 1) / Math.max(candidates.length, 1)) * 37);
+
+      if (keywords.length === 0) {
+        matched.push({ profile, plat, matchInfo: null });
+      } else {
+        const bio = (profile.biography || profile.bio || profile.signature || profile.description || '').toLowerCase();
+        const bioMatch = keywords.some(kw => bio.includes(kw.toLowerCase()));
+        if (bioMatch) {
+          matched.push({ profile, plat, matchInfo: { bioMatch: true, postScore: 0, postMatches: [] } });
+          setProgress(pct, `@${handle} matched in bio`);
+        } else {
+          setProgress(pct, `Scanning posts for @${handle}…`);
+          const result = await checkKeywords(profile, keywords, plat, apifyToken);
+          if (result.passed) matched.push({ profile, plat, matchInfo: result });
+        }
+      }
+    }
+
+    matched.sort((a, b) => {
+      if (a.matchInfo?.bioMatch && !b.matchInfo?.bioMatch) return -1;
+      if (!a.matchInfo?.bioMatch && b.matchInfo?.bioMatch) return 1;
+      return (b.matchInfo?.postScore || 0) - (a.matchInfo?.postScore || 0);
+    });
+
+    setProgress(100, `Found ${matched.length} creator${matched.length !== 1 ? 's' : ''}`);
+    document.getElementById('aiResults').classList.add('open');
+    document.getElementById('aiResultsCount').textContent = `${matched.length} creator${matched.length !== 1 ? 's' : ''} found`;
+
+    if (matched.length === 0) {
+      document.getElementById('aiCreatorList').innerHTML = `
+        <div style="text-align:center;padding:1.5rem;color:var(--gray-400);font-size:0.8rem;">
+          No profiles matched. Try broadening your follower range or removing some keywords.
+        </div>`;
+    } else {
+      matched.forEach(({ profile, plat, matchInfo }) => renderCreatorCard(profile, plat, matchInfo));
+    }
+
+    setTimeout(() => clearProgress(), 1200);
+
+  } catch (e) {
+    setProgress(100, `Error: ${e.message}`);
+    showError(e.message, e.isRateLimit);
+  } finally {
+    btn.classList.remove('loading'); btn.disabled = false;
+    document.getElementById('aiRunBtnText').textContent = '✦ Find Creators with AI';
   }
+}
+
+// ===================== INIT =====================
+loadSavedKeys();
+// Show session restore banner if results section is shown on load
+window.addEventListener('load', () => {
+  const saved = localStorage.getItem('cs_last_session');
+  if (saved) {
+    document.getElementById('resultsSection').style.display = 'block';
+    loadSessionBanner();
+  }
+});
 </script>
 </body>
 </html>
